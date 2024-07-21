@@ -1207,6 +1207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72398f5745f06e34eb073c17050731e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sequenceAmount: 0
+  actionAmountBySequence: 3
+  enemySequence: 
+  playerSequence: 
 --- !u!4 &2076139505
 Transform:
   m_ObjectHideFlags: 0
