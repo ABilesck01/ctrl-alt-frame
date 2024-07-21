@@ -10,13 +10,16 @@ public class Enemy : Character
     [SerializeField] private float attackDistance = 1;
     [SerializeField] private float distanceToRetreat = 1;
     [SerializeField] private float currentDistanceToRetreat;
+    [SerializeField] private float timeBtwAttacks = 0.75f;
 
     private Vector3 direction;
     private Vector3 startPoint;
     private Transform player;
+    private bool attack = false;
 
     private EnemyMovement enemyMovement;
-    private EnemyAnimation enemyAnimation;
+    private EnemyCombat enemyCombat;
+    [HideInInspector] public EnemyAnimation enemyAnimation;
 
     public EnemyAIState CurrentAIState
     {
@@ -29,6 +32,7 @@ public class Enemy : Character
         base.Awake();
 
         enemyMovement = GetComponent<EnemyMovement>();
+        enemyCombat = GetComponent<EnemyCombat>();
         enemyAnimation = GetComponent<EnemyAnimation>();
     }
 
@@ -40,6 +44,11 @@ public class Enemy : Character
 
     protected override void Update()
     {
+        if(currentAIState == EnemyAIState.beingPushed)
+        {
+            return;
+        }
+
         currentDistanceToRetreat = Vector3.Distance(startPoint, transform.position);
         if (currentDistanceToRetreat > distanceToRetreat && currentAIState != EnemyAIState.retreating)
         {
@@ -60,7 +69,18 @@ public class Enemy : Character
                 enemyAnimation.HandleMovementAnimation(1);
                 break;
             case EnemyAIState.attack: //attack the player
+               
+                enemyMovement.HandleMovement(Vector2.zero, 0); //stop the enemy;
+                enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
                 enemyAnimation.HandleMovementAnimation(0);
+
+                if(!attack)
+                {
+                    enemyCombat.HandlePunch();
+                    attack = true;
+                    Invoke(nameof(ResetAttack), timeBtwAttacks);
+                }
+
                 break;
             case EnemyAIState.minigame: //stop ai from chasing and attacking the player
                 enemyAnimation.HandleMovementAnimation(0);
@@ -77,6 +97,11 @@ public class Enemy : Character
                 }
                 break;
         }
+    }
+
+    private void ResetAttack()
+    {
+        attack = false;
     }
 
     private void CheckView()
@@ -133,5 +158,6 @@ public enum EnemyAIState
     chase,
     attack,
     minigame,
-    retreating
+    retreating,
+    beingPushed
 }

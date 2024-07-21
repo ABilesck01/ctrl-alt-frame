@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat : CharacterCombat
+public class EnemyCombat : CharacterCombat
 {
-    private Player player;
+    private Enemy enemy;
 
     protected override void Awake()
     {
-        base.Awake(); 
-        this.player = this.GetComponent<Player>();
+        base.Awake();
+        enemy = GetComponent<Enemy>();
     }
 
     public override void HandlePunch()
     {
-        player.playerAnimation.PlayAnimation("swoosh");
+        enemy.enemyAnimation.PlayAnimation("swoosh");
     }
 
     public void HandleAttack()
