@@ -15,4 +15,9 @@ public class CharacterAnimation : MonoBehaviour
     {
         animator.SetFloat("moveAmount", moveAmount);
     }
+
+    public virtual void PlayAnimation(string anim)
+    {
+        animator.CrossFade(anim, 0);
+    }
 }

@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : CharacterMovement
+public class EnemyMovement : CharacterMovement
 {
-
 }
