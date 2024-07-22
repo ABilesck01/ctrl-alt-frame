@@ -22,7 +22,7 @@ public class EnemyCombat : CharacterCombat
         Collider[] allHits = Physics.OverlapSphere(attackPoint.position, damageRadius, hitLayer);
         foreach (Collider hit in allHits)
         {
-            if (hit.TryGetComponent(out CharacterHealth characterHealth))
+            if (hit.TryGetComponent(out PlayerHealth characterHealth))
             {
                 characterHealth.TakeDamage(damage, transform);
             }

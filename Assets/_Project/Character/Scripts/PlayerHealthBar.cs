@@ -5,17 +5,17 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    public Slider slider;
+    public Slider healthBarSlider;
 
     public void SetHealth(int health)
     {
-        slider.value = health;
+        healthBarSlider.value = health;
     }   
 
      public void SetMaxHealth(int health)
     {
-        slider.maxValue= health;
-        slider.value = health;
+        healthBarSlider.maxValue= health;
+        healthBarSlider.value = health;
 
     }
         

@@ -15,6 +15,7 @@ public class Enemy : Character
     private Vector3 direction;
     private Vector3 startPoint;
     private Transform player;
+    private PlayerHealth playerHealth;
     private bool attack = false;
 
     private EnemyMovement enemyMovement;
@@ -40,6 +41,7 @@ public class Enemy : Character
     {
         startPoint = transform.position;
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     protected override void Update()
@@ -50,7 +52,8 @@ public class Enemy : Character
         }
 
         currentDistanceToRetreat = Vector3.Distance(startPoint, transform.position);
-        if (currentDistanceToRetreat > distanceToRetreat && currentAIState != EnemyAIState.retreating)
+        bool retreat = currentDistanceToRetreat > distanceToRetreat && currentAIState != EnemyAIState.retreating;
+        if (retreat || playerHealth.IsDead())
         {
             currentAIState = EnemyAIState.retreating;
         }
