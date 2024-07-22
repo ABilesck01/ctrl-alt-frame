@@ -114,6 +114,8 @@ public class Enemy : Character
             return;
         }
 
+        if (playerHealth.IsDead()) return;
+
         bool hasPlayerInView = Physics.CheckSphere(transform.position, viewRadius, playerLayer);
         if (hasPlayerInView)
         {
