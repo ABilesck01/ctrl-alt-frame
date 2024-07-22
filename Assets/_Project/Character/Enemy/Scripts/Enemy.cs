@@ -9,11 +9,12 @@ public class Enemy : Character
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float attackDistance = 1;
     [SerializeField] private float distanceToRetreat = 1;
-    [SerializeField] private float currentDistanceToRetreat;
     [SerializeField] private float timeBtwAttacks = 0.75f;
 
+    private float currentDistanceToRetreat;
     private Vector3 direction;
     private Vector3 startPoint;
+    private Vector3 randomPoint;
     private Transform player;
     private PlayerHealth playerHealth;
     private bool attack = false;
@@ -40,6 +41,10 @@ public class Enemy : Character
     private void Start()
     {
         startPoint = transform.position;
+        randomPoint = startPoint;
+
+        //MiniGameController.instance.OnCorrectMinigame
+
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
     }
@@ -47,6 +52,11 @@ public class Enemy : Character
     protected override void Update()
     {
         if(currentAIState == EnemyAIState.beingPushed)
+        {
+            return;
+        }
+
+        if (currentAIState == EnemyAIState.minigame)
         {
             return;
         }
@@ -63,43 +73,71 @@ public class Enemy : Character
 
         switch (currentAIState)
         {
-            case EnemyAIState.patrol: //walk randomly
-                enemyAnimation.HandleMovementAnimation(0);
-                break;
-            case EnemyAIState.chase: //chase player
+            case EnemyAIState.idle: //walk randomly
+
+                if(Vector3.Distance(randomPoint, transform.position) < 0.1f)
+                {
+                    //New random point
+                    float x = Random.Range(-distanceToRetreat / 2, distanceToRetreat / 2) + startPoint.x;
+                    float z = Random.Range(-distanceToRetreat / 2, distanceToRetreat / 2) + startPoint.z;
+
+                    randomPoint = new Vector3(x, 0, z);
+
+                }
+
+                direction = randomPoint - transform.position;
                 enemyMovement.HandleMovement(new Vector2(direction.x, direction.z), MovementSpeed);
                 enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
                 enemyAnimation.HandleMovementAnimation(1);
+
+                break;
+            case EnemyAIState.chase: //chase player
+                ChasePlayer();
                 break;
             case EnemyAIState.attack: //attack the player
-               
-                enemyMovement.HandleMovement(Vector2.zero, 0); //stop the enemy;
-                enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
-                enemyAnimation.HandleMovementAnimation(0);
-
-                if(!attack)
-                {
-                    enemyCombat.HandlePunch();
-                    attack = true;
-                    Invoke(nameof(ResetAttack), timeBtwAttacks);
-                }
-
+                AttackPlayer();
                 break;
             case EnemyAIState.minigame: //stop ai from chasing and attacking the player
                 enemyAnimation.HandleMovementAnimation(0);
                 break;
             case EnemyAIState.retreating:
-                direction = startPoint - transform.position;
-                enemyMovement.HandleMovement(new Vector2(direction.x, direction.z), MovementSpeed);
-                enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
-                enemyAnimation.HandleMovementAnimation(1);
-                if(currentDistanceToRetreat < 0.1f)
-                {
-                    currentAIState = EnemyAIState.patrol;
-                    currentDistanceToRetreat = 0;
-                }
+                Retreat();
                 break;
         }
+    }
+
+    private void Retreat()
+    {
+        direction = startPoint - transform.position;
+        enemyMovement.HandleMovement(new Vector2(direction.x, direction.z), MovementSpeed);
+        enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
+        enemyAnimation.HandleMovementAnimation(1);
+        if (currentDistanceToRetreat < 0.1f)
+        {
+            currentAIState = EnemyAIState.idle;
+            currentDistanceToRetreat = 0;
+        }
+    }
+
+    private void AttackPlayer()
+    {
+        enemyMovement.HandleMovement(Vector2.zero, 0); //stop the enemy;
+        enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
+        enemyAnimation.HandleMovementAnimation(0);
+
+        if (!attack)
+        {
+            enemyCombat.HandlePunch();
+            attack = true;
+            Invoke(nameof(ResetAttack), timeBtwAttacks);
+        }
+    }
+
+    private void ChasePlayer()
+    {
+        enemyMovement.HandleMovement(new Vector2(direction.x, direction.z), MovementSpeed);
+        enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
+        enemyAnimation.HandleMovementAnimation(1);
     }
 
     private void ResetAttack()
@@ -110,6 +148,11 @@ public class Enemy : Character
     private void CheckView()
     {
         if(currentAIState == EnemyAIState.retreating)
+        {
+            return;
+        }
+
+        if (currentAIState == EnemyAIState.minigame)
         {
             return;
         }
@@ -128,7 +171,7 @@ public class Enemy : Character
             return;
         }
 
-        currentAIState = EnemyAIState.patrol;   
+        currentAIState = EnemyAIState.idle;   
     }
 
     private void CalculateDirection()
@@ -153,13 +196,15 @@ public class Enemy : Character
         Gizmos.DrawWireSphere(transform.position, viewRadius);
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, distanceToRetreat);
     }
 
 }
 
 public enum EnemyAIState
 {
-    patrol,
+    idle,
     chase,
     attack,
     minigame,

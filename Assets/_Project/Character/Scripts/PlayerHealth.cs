@@ -13,7 +13,7 @@ public class PlayerHealth : CharacterHealth
 
     private void Start()
     {
-        playerhealthbar.SetMaxHealth(maxhealth);
+        playerhealthbar.SetMaxHealth(MaxHealth);
         player = GetComponent<Player>();
     }
 

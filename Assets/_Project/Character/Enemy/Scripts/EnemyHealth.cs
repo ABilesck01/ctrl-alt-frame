@@ -13,6 +13,11 @@ public class EnemyHealth : CharacterHealth
         enemy = GetComponent<Enemy>();
     }
 
+    private void Start()
+    {
+        MiniGameController.instance.OnWrongMinigame.AddListener(ResetCaracter);
+    }
+
     public override void TakeDamage(int damage, Transform attackPoint)
     {
         base.TakeDamage(damage, attackPoint);
@@ -23,7 +28,21 @@ public class EnemyHealth : CharacterHealth
 
     private void ResetEnemyAi()
     {
-        enemy.CurrentAIState = EnemyAIState.patrol;
+        if (!isDead)
+            enemy.CurrentAIState = EnemyAIState.idle;
+        else
+            enemy.CurrentAIState = EnemyAIState.minigame;
     }
 
+    public override void Die()
+    {
+        base.Die();
+
+    }
+
+    protected override void ResetCaracter()
+    {
+        base.ResetCaracter();
+        enemy.CurrentAIState = EnemyAIState.idle;
+    }
 }

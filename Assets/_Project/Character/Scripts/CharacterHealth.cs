@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class CharacterHealth : MonoBehaviour
 {
@@ -8,13 +9,16 @@ public class CharacterHealth : MonoBehaviour
 	[SerializeField] private int currentHealth;
 	[SerializeField] private float backwardsPushForce;
 	[SerializeField] private float upPushForce;
-	private Rigidbody rb;
+	[Header("Callbacks")]
+	public UnityEvent OnCharacterDeath;
+	public UnityEvent OnCharacterReset;
 
+	private Rigidbody rb;
 	protected bool isDead;
 
 	public bool IsDead() => isDead;
 
-	public int maxhealth
+	public int MaxHealth
 	{
 		get { return maxHealth; }
 		set { maxHealth = value; }
@@ -29,7 +33,7 @@ public class CharacterHealth : MonoBehaviour
 
 	protected virtual void Awake()
 	{
-        Currenthealth = maxhealth;
+        Currenthealth = MaxHealth;
 		rb = GetComponent<Rigidbody>();
 	}
 
@@ -56,11 +60,14 @@ public class CharacterHealth : MonoBehaviour
 	public virtual void Die()
 	{
 		isDead = true;
-	}
+		OnCharacterDeath?.Invoke();
+
+    }
 
 	protected virtual void ResetCaracter()
 	{
 		currentHealth = maxHealth;
 		isDead = false;
+		OnCharacterReset?.Invoke();
 	}
 }
