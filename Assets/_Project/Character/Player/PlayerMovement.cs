@@ -34,7 +34,7 @@ public class PlayerMovement : CharacterMovement
 
         Vector3 movement = new Vector3(direction.x, 0, direction.y);
         movement.Normalize();
-        rb.AddForce(movement * dashForce, ForceMode.Impulse);
+        rb.AddForce(movement * dashForce, ForceMode.VelocityChange);
         StartCoroutine(ResetDash());
     }
     IEnumerator ResetDash()
