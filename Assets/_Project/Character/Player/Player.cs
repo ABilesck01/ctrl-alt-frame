@@ -8,10 +8,13 @@ public class Player : Character
     [Header("Inputs")]
     [SerializeField] private Vector2 inputMovement;
     [SerializeField] private bool action_01;
+    [SerializeField] private bool playerdash;
+
     [Header("Components")]
     [SerializeField] public PlayerMovement playerMovement;
     [SerializeField] public PlayerAnimation playerAnimation;
     [SerializeField] public PlayerCombat playerCombat;
+    
 
     public void OnInputMovement(InputAction.CallbackContext context)
     {
@@ -27,6 +30,16 @@ public class Player : Character
 
     }
 
+    public void PlayerDash(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            playerdash = true;
+        }
+
+    }
+
+
     protected override void Update()
     {
         playerMovement.handleRotation(inputMovement);
@@ -35,6 +48,11 @@ public class Player : Character
         {
             action_01 = false;
             playerCombat.HandlePunch();
+        } 
+        if(playerdash)
+        {
+            playerdash =  false;
+            playerMovement.Dash(inputMovement); 
         }
     }
 

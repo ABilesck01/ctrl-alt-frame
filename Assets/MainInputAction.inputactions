@@ -24,6 +24,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Dash",
+                    "type": "Button",
+                    "id": "385bfd66-3160-4984-8368-43a59c5e2d1b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "up",
                     "type": "Button",
                     "id": "08ff2d9c-fa65-4902-9fb1-56f2340ff46c",
@@ -278,6 +287,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "right",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "269598db-eac7-49f7-8962-fb2ad17e2871",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Dash",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

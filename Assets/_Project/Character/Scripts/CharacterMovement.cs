@@ -9,7 +9,7 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform pivotRotation;
     [SerializeField] private SpriteRenderer sprite;
 
-    private bool facingRight = true;
+    protected bool facingRight = true;
 
     protected Rigidbody rb;
 
