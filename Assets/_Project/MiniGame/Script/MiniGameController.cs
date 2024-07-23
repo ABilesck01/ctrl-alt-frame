@@ -16,6 +16,8 @@ public class MiniGameController : MonoBehaviour
     public UnityEvent OnCorrectMinigame;
     public UnityEvent OnWrongMinigame;
 
+    public bool hasMinigame = false;
+
     private void Awake()
     {
         instance = this;
@@ -29,6 +31,11 @@ public class MiniGameController : MonoBehaviour
         {
             enemy.OnCharacterDeath.AddListener(StartMinigame);
         }
+    }
+
+    public void AddActionToSequence(Sequence sequence)
+    {
+        playerSequence.Add(sequence);
     }
 
     private void StartMinigame()
@@ -48,17 +55,23 @@ public class MiniGameController : MonoBehaviour
     }
     IEnumerator showSequenceToPlayer()
     {
+        yield return new WaitForSeconds(0.5f);
+
         for (int i = 0; i < enemySequence.Count; i++)
         {
             Debug.Log(enemySequence[i]); 
             yield return new WaitForSeconds(0.5f);  
         }
+
+        hasMinigame = true;
     }
 
     [ContextMenu("Check MiniGame")]
-    private void CheckMiniGame()
+    public void CheckMiniGame()
     {
-        if(enemySequence.Count != playerSequence.Count) {
+        hasMinigame = false;
+
+        if (enemySequence.Count != playerSequence.Count) {
             Debug.Log("wrong sequence");
             OnWrongMinigame?.Invoke();
             return;
