@@ -27,4 +27,9 @@ public class Character : MonoBehaviour
 		spriteRenderer.color = characterColor;
         characterLight.color = characterColor;
 	}
+
+	protected virtual void Update()
+	{
+
+	}
 }

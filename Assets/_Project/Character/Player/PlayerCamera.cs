@@ -9,7 +9,7 @@ public class PlayerCamera : MonoBehaviour
 
     private Vector3 cameraVelocity;
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         Vector3 targetCameraPosition = Vector3.SmoothDamp(transform.position, target.position, ref cameraVelocity, cameraSmoothSpeed);
         transform.position = targetCameraPosition;
