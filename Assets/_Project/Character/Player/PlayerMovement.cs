@@ -9,6 +9,7 @@ public class PlayerMovement : CharacterMovement
     public bool canDash = true;
      
     public float dashForce = 0f;
+    public float dashTime = 0f;
     public override void HandleMovement(Vector2 direction, float speed)
     {
         if(!canMove)
@@ -39,7 +40,7 @@ public class PlayerMovement : CharacterMovement
     }
     IEnumerator ResetDash()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(dashTime);
         canDash = true;
         canMove = true;
     }

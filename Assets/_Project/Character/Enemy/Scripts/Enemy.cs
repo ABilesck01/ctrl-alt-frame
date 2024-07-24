@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,7 +11,13 @@ public class Enemy : Character
     [SerializeField] private float attackDistance = 1;
     [SerializeField] private float distanceToRetreat = 1;
     [SerializeField] private float timeBtwAttacks = 0.75f;
+    [Space]
+    [SerializeField] private DOTweenAnimation starAnimation;
+    [SerializeField] private Character lockedStar;
     [Header("Sequence")]
+    [SerializeField] private int actionAmount;
+    [SerializeField] private int sequenceAmount;
+    [Header("Sequence Game objects")]
     [SerializeField] private GameObject sequenceUp;
     [SerializeField] private GameObject sequenceDown;
     [SerializeField] private GameObject sequenceLeft;
@@ -52,6 +59,12 @@ public class Enemy : Character
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = player.GetComponent<PlayerHealth>();
+    }
+
+    public void SpawnStar()
+    {
+        Instantiate(lockedStar, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     protected override void Update()
@@ -217,7 +230,14 @@ public class Enemy : Character
         }
 
         GameObject signInstance = Instantiate(sign, transform.position, Quaternion.identity);
-        Destroy(signInstance, 1f);
+        Destroy(signInstance, 1.5f);
+    }
+
+    public void UnlockStar()
+    {
+        
+        starAnimation.DOPlay();
+        Invoke(nameof(SpawnStar), 0.41f);
     }
 
     private void OnDrawGizmosSelected()

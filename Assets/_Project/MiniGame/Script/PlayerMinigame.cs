@@ -57,7 +57,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.up);
             MiniGameController.instance.AddActionToSequence(Sequence.up);
-            Invoke(nameof(FinishMinigame), 1f);
+            Invoke(nameof(FinishMinigame), 1.5f);
         }
 
         if(down)
@@ -66,7 +66,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.down);
             MiniGameController.instance.AddActionToSequence(Sequence.down);
-            Invoke(nameof(FinishMinigame), 1f);
+            Invoke(nameof(FinishMinigame), 1.5f);
         }
 
         if (left)
@@ -75,7 +75,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.left);
             MiniGameController.instance.AddActionToSequence(Sequence.left);
-            Invoke(nameof(FinishMinigame), 1f);
+            Invoke(nameof(FinishMinigame), 1.5f);
         }
 
         if(right)
@@ -84,7 +84,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.right);
             MiniGameController.instance.AddActionToSequence(Sequence.right);
-            Invoke(nameof(FinishMinigame), 1f);
+            Invoke(nameof(FinishMinigame), 1.5f);
         }
     }
 

@@ -44,6 +44,7 @@ public class PlayerHealth : CharacterHealth
     {
         Debug.Log("Reset character");
         base.ResetCaracter();
+        playerhealthbar.SetHealth(Currenthealth);
         player.playerMovement.canMove = true;
         transform.position = Vector3.zero;
     }

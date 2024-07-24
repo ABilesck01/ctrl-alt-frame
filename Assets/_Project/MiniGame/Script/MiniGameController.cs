@@ -13,11 +13,15 @@ public class MiniGameController : MonoBehaviour
     [SerializeField] private List<Sequence> enemySequence;
     [SerializeField] private List<Sequence> playerSequence;
     [Header("Callbacks")]
+    public UnityEvent<Character> OnStartMinimage;
     public UnityEvent OnCorrectMinigame;
     public UnityEvent OnWrongMinigame;
 
     public bool hasMinigame = false;
     private Enemy characterOnMinigame;
+
+    public int SequenceAmount { get => sequenceAmount; set => sequenceAmount = value; }
+    public int ActionAmountBySequence { get => actionAmountBySequence; set => actionAmountBySequence = value; }
 
     private void Awake()
     {
@@ -42,6 +46,7 @@ public class MiniGameController : MonoBehaviour
     private void StartMinigame(CharacterHealth character)
     {
         characterOnMinigame = character.GetComponent<Enemy>();
+        OnStartMinimage?.Invoke(characterOnMinigame);
         RandomSequence();
         StartCoroutine(showSequenceToPlayer());
     }
@@ -90,6 +95,7 @@ public class MiniGameController : MonoBehaviour
         }
 
         Debug.Log("right sequence");
+        characterOnMinigame.UnlockStar();
         OnCorrectMinigame?.Invoke();
     }
 }
