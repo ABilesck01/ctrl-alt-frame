@@ -10,6 +10,11 @@ public class Enemy : Character
     [SerializeField] private float attackDistance = 1;
     [SerializeField] private float distanceToRetreat = 1;
     [SerializeField] private float timeBtwAttacks = 0.75f;
+    [Header("Sequence")]
+    [SerializeField] private GameObject sequenceUp;
+    [SerializeField] private GameObject sequenceDown;
+    [SerializeField] private GameObject sequenceLeft;
+    [SerializeField] private GameObject sequenceRight;
 
     private float currentDistanceToRetreat;
     private Vector3 direction;
@@ -58,6 +63,7 @@ public class Enemy : Character
 
         if (currentAIState == EnemyAIState.minigame)
         {
+            enemyAnimation.HandleMovementAnimation(0);
             return;
         }
 
@@ -188,6 +194,30 @@ public class Enemy : Character
     private void Patrol()
     {
 
+    }
+
+    public void ShowSequence(Sequence s)
+    {
+        GameObject sign = sequenceUp;
+
+        switch (s)
+        {
+            case Sequence.up:
+                sign = sequenceUp;
+                break;
+            case Sequence.down:
+                sign = sequenceDown;
+                break;
+            case Sequence.left:
+                sign = sequenceLeft;
+                break;
+            case Sequence.right:
+                sign = sequenceRight;
+                break;
+        }
+
+        GameObject signInstance = Instantiate(sign, transform.position, Quaternion.identity);
+        Destroy(signInstance, 1f);
     }
 
     private void OnDrawGizmosSelected()

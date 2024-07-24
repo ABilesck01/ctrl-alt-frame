@@ -10,7 +10,7 @@ public class CharacterHealth : MonoBehaviour
 	[SerializeField] private float backwardsPushForce;
 	[SerializeField] private float upPushForce;
 	[Header("Callbacks")]
-	public UnityEvent OnCharacterDeath;
+	public UnityEvent<CharacterHealth> OnCharacterDeath;
 	public UnityEvent OnCharacterReset;
 
 	private Rigidbody rb;
@@ -60,7 +60,7 @@ public class CharacterHealth : MonoBehaviour
 	public virtual void Die()
 	{
 		isDead = true;
-		OnCharacterDeath?.Invoke();
+		OnCharacterDeath?.Invoke(this);
 
     }
 

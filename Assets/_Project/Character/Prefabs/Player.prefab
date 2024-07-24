@@ -83,7 +83,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 24e250cd7863f234fb69b8394149e823, type: 2}
+  - {fileID: 2100000, guid: 3a89bf846adc4794a96c0d75eca2bc22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -200,7 +200,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 24e250cd7863f234fb69b8394149e823, type: 2}
+  - {fileID: 2100000, guid: 3a89bf846adc4794a96c0d75eca2bc22, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -242,6 +242,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5904104592427645178}
   - component: {fileID: 2823102583820400488}
+  - component: {fileID: 7597755190942131603}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -326,6 +327,29 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &7597755190942131603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3012726606844272228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &3647317895494435946
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +677,7 @@ MonoBehaviour:
   sprite: {fileID: 6355138094850859548}
   canMove: 1
   canDash: 1
-  dashForce: 15
+  dashForce: 10
 --- !u!114 &2516747684949952903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -721,3 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c631d3d153ac2345baeb59de0e8daa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sequenceUp: {fileID: 1401105734387144159, guid: 58829f2afc9a8aa42bead4f47def45f6, type: 3}
+  sequenceDown: {fileID: 1444188435319926861, guid: a70cbcdc415aa784ab20f1976829f571, type: 3}
+  sequenceLeft: {fileID: 3400749442718752553, guid: e3b9442cc05433941873dd20f680e49b, type: 3}
+  sequenceRight: {fileID: 5650084642362935742, guid: e8f1355b432b7bd4c82954d06c967195, type: 3}
