@@ -23,6 +23,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _AniTexture:
+        m_Texture: {fileID: 2800000, guid: 57a7cf4ef2549434abfed0683a0a9167, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _FoamTexture:
         m_Texture: {fileID: 2800000, guid: 1847c427ebed2b7469dd22667fe6e4e0, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -41,8 +45,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AnimCutOut: 2.07
     - _FoamAmount: 0.8
-    - _FoamCutout: 0.5
+    - _FoamCutout: 0.38
     - _FoamFallOff: 2.7
     - _FoamShoreWidth: 0.95
     - _FoamTiling: 0.99
@@ -52,6 +57,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
+    - _AnimColor: {r: 1, g: 1, b: 1, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamSpeed: {r: 0, g: 0.1, b: 0, a: 0}
     - _MainColor: {r: 0.28439835, g: 0.4107725, b: 0.7830189, a: 0}
