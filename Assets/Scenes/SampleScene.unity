@@ -749,6 +749,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 702152671354376326, guid: 6f045761bf23ceb4aa9df3bf5ecfba37, type: 3}
+      propertyPath: characterColor.g
+      value: 0.015686275
+      objectReference: {fileID: 0}
     - target: {fileID: 4833136090117161181, guid: 6f045761bf23ceb4aa9df3bf5ecfba37, type: 3}
       propertyPath: m_LocalPosition.x
       value: -11.95
@@ -1691,7 +1695,7 @@ MonoBehaviour:
   focusTime: 5
   focusFOV: 35
   focusCameraPosition: {x: 0, y: 2.8, z: -5}
-  focusPointOffset: {x: -0.3, y: 1.7, z: 0}
+  focusPointOffset: {x: 0, y: 1.7, z: 0}
 --- !u!1 &1727396298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,8 +2077,8 @@ SceneRoots:
   - {fileID: 1915864246}
   - {fileID: 1704982124}
   - {fileID: 2076139505}
-  - {fileID: 582407503}
   - {fileID: 2063021132}
   - {fileID: 1240648380}
   - {fileID: 890881380}
   - {fileID: 1206749898}
+  - {fileID: 582407503}
