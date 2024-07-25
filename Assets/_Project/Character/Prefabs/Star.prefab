@@ -204,7 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ebd8216d6079f47818c33ebb125558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterColor: {r: 1, g: 0.69803923, b: 0, a: 1}
+  characterColor: {r: 0.88235295, g: 0.007843138, b: 0.8980392, a: 1}
   movementSpeed: 0
   spriteRenderer: {fileID: 7260686556065607734}
   characterLight: {fileID: 1268870193423191973}

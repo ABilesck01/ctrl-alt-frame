@@ -8,7 +8,7 @@ public class CharacterAnimation : MonoBehaviour
 
     protected virtual void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     public virtual void HandleMovementAnimation(float moveAmount)

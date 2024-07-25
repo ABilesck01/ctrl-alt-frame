@@ -10340,7 +10340,7 @@ MonoBehaviour:
   canMove: 1
   canDash: 1
   dashForce: 20
-  dashTime: 0.4
+  dashTime: 0.3
 --- !u!114 &2516747684949952903
 MonoBehaviour:
   m_ObjectHideFlags: 0

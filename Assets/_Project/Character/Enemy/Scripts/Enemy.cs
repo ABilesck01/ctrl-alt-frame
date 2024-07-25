@@ -54,7 +54,6 @@ public class Enemy : Character
     {
         startPoint = transform.position;
         randomPoint = startPoint;
-
         //MiniGameController.instance.OnCorrectMinigame
 
         player = GameObject.FindGameObjectWithTag("Player").transform;
@@ -69,6 +68,9 @@ public class Enemy : Character
 
     protected override void Update()
     {
+        if (attack)
+            return;
+
         if(currentAIState == EnemyAIState.beingPushed)
         {
             return;
@@ -142,7 +144,7 @@ public class Enemy : Character
     {
         enemyMovement.HandleMovement(Vector2.zero, 0); //stop the enemy;
         enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
-        enemyAnimation.HandleMovementAnimation(0);
+        //enemyAnimation.HandleMovementAnimation(0);
 
         if (!attack)
         {

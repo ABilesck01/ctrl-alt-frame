@@ -24,8 +24,14 @@ public class Character : MonoBehaviour
 
 	protected virtual void Awake()
 	{
-		spriteRenderer.color = characterColor;
-        characterLight.color = characterColor;
+		if(spriteRenderer != null)
+		{
+			spriteRenderer.color = characterColor;
+		}
+		if(characterColor != null)
+		{
+			characterLight.color = characterColor;
+		}
 	}
 
 	protected virtual void Update()

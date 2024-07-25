@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private Transform pivotRotation;
+    [SerializeField] protected Transform pivotRotation;
     [SerializeField] private SpriteRenderer sprite;
 
     protected bool facingRight = true;
