@@ -1,0 +1,203 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8351054310937062701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Loop estrela/Loop estrela
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Loop estrela/Loop estrela
+  Guid:
+    Data1: -1708664044
+    Data2: 1167474306
+    Data3: 67431358
+    Data4: 1476620048
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 22290
+--- !u!114 &-4771732598763857480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Dash/Dash
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Dash/Dash
+  Guid:
+    Data1: 941218948
+    Data2: 1132609776
+    Data3: -228263757
+    Data4: 1992010629
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &-1408314513196839393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Ui/Hover/Hover
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Ui/Hover/Hover
+  Guid:
+    Data1: 87780270
+    Data2: 1263353689
+    Data3: 346606266
+    Data4: -98231426
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-723263346373637644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Ui/Click/Click
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Ui/Click/Click
+  Guid:
+    Data1: 1222484487
+    Data2: 1327083246
+    Data3: 2131529907
+    Data4: 1544107217
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 1769467196793397192}
+  - {fileID: 4991153942311646655}
+  EditorEvents:
+  - {fileID: -723263346373637644}
+  - {fileID: -8351054310937062701}
+  - {fileID: -4771732598763857480}
+  - {fileID: -1408314513196839393}
+  - {fileID: 8814921587065573823}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 4991153942311646655}
+  StringsBanks:
+  - {fileID: 1769467196793397192}
+  cacheTime: 638575238841129746
+  cacheVersion: 131619
+--- !u!114 &1769467196793397192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: fmodBancos/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638575238818222845
+  FileSizes:
+  - Name: 
+    Value: 1068
+  Exists: 1
+--- !u!114 &4991153942311646655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: fmodBancos/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638575238841129746
+  FileSizes: []
+  Exists: 1
+--- !u!114 &8814921587065573823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Coleta de estrela/Coleta de estrela
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Coleta de estrela/Coleta de estrela
+  Guid:
+    Data1: -1642433069
+    Data2: 1080036975
+    Data3: 639950774
+    Data4: -1320151246
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2600
