@@ -10,6 +10,8 @@ public class SettingsController : MonoBehaviour
 {
     public TMPro.TMP_Dropdown resolutionsDropdown;
     public AudioMixer audioMixer;
+    [Header("Tabs")]
+    public GameObject[] tabs;
     Resolution[] resolutions;
 
     void Start()
@@ -66,5 +68,20 @@ public class SettingsController : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void changeTabs (int index)
+    {
+        for (int i = 0; i < tabs.Length; i++)
+        {
+            if (i == index)
+            {
+                tabs[i].SetActive(true);
+            }
+            else
+            {
+                tabs[i].SetActive(false);
+            }
+        }
     }
 }
