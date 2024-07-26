@@ -9,6 +9,7 @@ public class MiniGameController : MonoBehaviour
 
     [SerializeField] private int sequenceAmount;
     [SerializeField] private int actionAmountBySequence;
+    [SerializeField] private float startMinigameDelay = 1;
 
     [SerializeField] private List<Sequence> enemySequence;
     [SerializeField] private List<Sequence> playerSequence;
@@ -46,6 +47,12 @@ public class MiniGameController : MonoBehaviour
     private void StartMinigame(CharacterHealth character)
     {
         characterOnMinigame = character.GetComponent<Enemy>();
+        StartCoroutine(StartMinigameCoroutine());
+    }
+
+    private IEnumerator StartMinigameCoroutine()
+    {
+        yield return new WaitForSeconds(startMinigameDelay);
         OnStartMinimage?.Invoke(characterOnMinigame);
         RandomSequence();
         StartCoroutine(showSequenceToPlayer());

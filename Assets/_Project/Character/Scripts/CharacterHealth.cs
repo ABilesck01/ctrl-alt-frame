@@ -9,12 +9,15 @@ public class CharacterHealth : MonoBehaviour
 	[SerializeField] private int currentHealth;
 	[SerializeField] private float backwardsPushForce;
 	[SerializeField] private float upPushForce;
+	
 	[Header("Callbacks")]
 	public UnityEvent<CharacterHealth> OnCharacterDeath;
 	public UnityEvent OnCharacterReset;
 
 	private Rigidbody rb;
+	protected int pushForceTotal;
 	protected bool isDead;
+	
 
 	public bool IsDead() => isDead;
 
@@ -46,15 +49,17 @@ public class CharacterHealth : MonoBehaviour
 		}
 
 		Vector3 direction = attackPoint.position - transform.position;
-		rb.AddForce(-direction * backwardsPushForce, ForceMode.Force);
-		rb.AddForce(Vector3.up * upPushForce, ForceMode.Force);
+		rb.AddForce(-direction * backwardsPushForce * pushForceTotal, ForceMode.Force);
+		rb.AddForce(Vector3.up * upPushForce * pushForceTotal, ForceMode.Force);
 
 		Currenthealth -= damage;
 		if( Currenthealth <= 0 )
 		{
 			Die();
 			Debug.Log($"{gameObject.name} died");
+			return;
 		}
+
 	}
 
 	public virtual void Die()
@@ -68,6 +73,6 @@ public class CharacterHealth : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		isDead = false;
-		OnCharacterReset?.Invoke();
+        OnCharacterReset?.Invoke();
 	}
 }
