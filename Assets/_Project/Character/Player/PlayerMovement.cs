@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class PlayerMovement : CharacterMovement
 {
+    [SerializeField]FMODUnity.StudioEventEmitter dashSound;
+    
     public bool canMove = true;
 
     public bool canDash = true;
      
+
     public float dashForce = 0f;
     public float dashTime = 0f;
     public override void HandleMovement(Vector2 direction, float speed)
@@ -26,6 +29,8 @@ public class PlayerMovement : CharacterMovement
         {
             return;
         }
+
+        dashSound.Play();
 
         if (direction == Vector2.zero)
             direction = new Vector2(facingRight ? 1 : 0, 0);

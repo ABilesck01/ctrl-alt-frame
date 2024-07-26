@@ -12,7 +12,7 @@ public class EnemyCombat : CharacterCombat
     {
         base.Awake();
         enemy = GetComponent<Enemy>();
-        skeletonAnimation = GetComponent<SkeletonAnimation>();
+        skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
     }
 
     private void Start()

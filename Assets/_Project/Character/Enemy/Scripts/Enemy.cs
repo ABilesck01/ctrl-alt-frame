@@ -29,7 +29,7 @@ public class Enemy : Character
     private Vector3 randomPoint;
     private Transform player;
     private PlayerHealth playerHealth;
-    private bool attack = false;
+    public bool attack = false;
 
     private EnemyMovement enemyMovement;
     private EnemyCombat enemyCombat;
