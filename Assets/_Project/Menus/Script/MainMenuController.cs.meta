@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Plugins/FMOD/platforms/android/src/PlatformAndroid.cs.meta
+guid: df4c766f78317dd439d4a0203cc46419
+========
+guid: 8052c760149ebc04b841feb7e80acf66
+>>>>>>>> feature/Menus:Assets/_Project/Menus/Script/MainMenuController.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
