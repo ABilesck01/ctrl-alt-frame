@@ -17,6 +17,7 @@ public class MiniGameController : MonoBehaviour
     public UnityEvent OnWrongMinigame;
 
     public bool hasMinigame = false;
+    private Enemy characterOnMinigame;
 
     private void Awake()
     {
@@ -38,8 +39,9 @@ public class MiniGameController : MonoBehaviour
         playerSequence.Add(sequence);
     }
 
-    private void StartMinigame()
+    private void StartMinigame(CharacterHealth character)
     {
+        characterOnMinigame = character.GetComponent<Enemy>();
         RandomSequence();
         StartCoroutine(showSequenceToPlayer());
     }
@@ -59,8 +61,9 @@ public class MiniGameController : MonoBehaviour
 
         for (int i = 0; i < enemySequence.Count; i++)
         {
-            Debug.Log(enemySequence[i]); 
-            yield return new WaitForSeconds(0.5f);  
+            Debug.Log(enemySequence[i]);
+            characterOnMinigame.ShowSequence(enemySequence[i]);
+            yield return new WaitForSeconds(1f);  
         }
 
         hasMinigame = true;
