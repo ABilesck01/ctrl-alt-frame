@@ -1,0 +1,7 @@
+jam_starchild.png
+size:968,1032
+filter:Linear,Linear
+pma:true
+star enemy atlas
+bounds:2,2,964,1028
+offsets:17,18,1080,1080

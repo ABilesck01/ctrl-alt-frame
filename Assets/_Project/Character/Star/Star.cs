@@ -21,11 +21,15 @@ public class Star : Character
     private Vector3 direction;
 
     private StarMovement starMovement;
+    private StarAnimation starAnimation;
+    private Rigidbody rb;
 
     protected override void Awake()
     {
         base.Awake();
         starMovement = GetComponent<StarMovement>();
+        starAnimation = GetComponent<StarAnimation>();
+        rb = GetComponent<Rigidbody>();
         currentStarSate = StarState.running;
     }
 
@@ -59,7 +63,7 @@ public class Star : Character
         direction = randomPoint - transform.position;
         starMovement.HandleMovement(new Vector2(direction.x, direction.z), runningSpeed);
         starMovement.handleRotation(new Vector2(direction.x, direction.z));
-        //enemyAnimation.HandleMovementAnimation(1);
+        starAnimation.HandleMovementAnimation(2);
     }
 
     private void FollowPlayer()
@@ -75,6 +79,11 @@ public class Star : Character
             starMovement.HandleMovement(Vector2.zero, followSpeed);
             starMovement.handleRotation(new Vector2(direction.x, direction.z));
         }
+
+        if (rb.velocity.magnitude > 0.1)
+            starAnimation.HandleMovementAnimation(1);
+        else
+            starAnimation.HandleMovementAnimation(0);
     }
 
     private void OnCollisionEnter(Collision collision)
