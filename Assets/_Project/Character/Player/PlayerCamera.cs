@@ -1,7 +1,7 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 
 public class PlayerCamera : MonoBehaviour
 {
@@ -24,7 +24,10 @@ public class PlayerCamera : MonoBehaviour
     private float normalFOV;
     private bool isOnMinigame = false;
     public bool isLookingAtSky = false;
+    private bool isShakingCamera = false;
     private Vector3 cameraVelocity;
+
+    public static PlayerCamera instance;
 
     private Vector3 startPosition;
     private Quaternion startRotation;
@@ -33,7 +36,7 @@ public class PlayerCamera : MonoBehaviour
     {
         startPosition = cameraTransform.position;
         startRotation = cameraTransform.rotation;
-
+        instance = this;
         cam = cameraTransform.GetComponent<Camera>();
         normalFOV = cam.fieldOfView;
     }
@@ -60,6 +63,8 @@ public class PlayerCamera : MonoBehaviour
 
     private void Update()
     {
+        if (isShakingCamera)
+            return;
         MinigameCamera();
         SkyCamera();
     }
@@ -178,6 +183,35 @@ public class PlayerCamera : MonoBehaviour
         }
         Vector3 targetCameraPosition = Vector3.SmoothDamp(transform.position, target.position, ref cameraVelocity, cameraSmoothSpeed);
         transform.position = targetCameraPosition;
+    }
+
+    public void ShakeCamera(float duration, float magnitude)
+    {
+        if (isShakingCamera)
+            return;
+
+        StartCoroutine(ShakeCameraCoroutine(duration, magnitude));
+    }
+
+    private IEnumerator ShakeCameraCoroutine(float duration, float magnitude)
+    {
+        isShakingCamera = true;
+        Vector3 startPosition = cameraTransform.localPosition;
+        float elapsedTime = 0;
+
+        while (elapsedTime < duration)
+        {
+            float x = Random.Range(-1, 1) * magnitude;
+            float y = Random.Range(-1, 1) * magnitude;
+
+            cameraTransform.localPosition = new Vector3(x + startPosition.x, y + startPosition.y, startPosition.z);
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cameraTransform.localPosition = startPosition;
+        isShakingCamera = false;
     }
 
 }

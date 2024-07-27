@@ -117,7 +117,7 @@ public class PlayerMinigame : MonoBehaviour
     public void ShowSequence(Sequence s)
     {
         GameObject sign = sequenceUp;
-
+        PlayerCamera.instance.ShakeCamera(.15f, .2f);
         switch (s)
         {
             case Sequence.up:

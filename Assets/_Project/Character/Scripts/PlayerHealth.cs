@@ -20,6 +20,7 @@ public class PlayerHealth : CharacterHealth
     public override void TakeDamage(int damage, Transform attackPoint)
     {
         base.TakeDamage(damage, attackPoint);
+        PlayerCamera.instance.ShakeCamera(.15f, .16f);
         playerhealthbar.SetHealth(Currenthealth);
         player.playerMovement.canMove = false;
         if(!isDead)

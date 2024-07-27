@@ -51,6 +51,8 @@ public class PlayerMovement : CharacterMovement
             return;
         }
 
+        PlayerCamera.instance.ShakeCamera(.1f, .08f);
+
         dashSound.Play();
 
         if (direction == Vector2.zero)

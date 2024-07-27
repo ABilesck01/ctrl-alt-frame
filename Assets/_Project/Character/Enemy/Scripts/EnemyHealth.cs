@@ -33,6 +33,7 @@ public class EnemyHealth : CharacterHealth
             pushForceTotal = 1;
 
         base.TakeDamage(damage, attackPoint);
+        PlayerCamera.instance.ShakeCamera(.12f, .1f);
         if (!isDead)
             enemy.enemyAudio.PlayHitSound();
         if(!enemy.attack)
