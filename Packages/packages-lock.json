@@ -145,7 +145,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.feature.2d": {
-      "version": "2.0.1",
+      "version": "2.0.0",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
@@ -242,7 +242,7 @@
       }
     },
     "com.unity.render-pipelines.universal": {
-      "version": "14.0.11",
+      "version": "14.0.9",
       "depth": 0,
       "source": "builtin",
       "dependencies": {
@@ -351,7 +351,7 @@
       }
     },
     "com.unity.visualscripting": {
-      "version": "1.9.4",
+      "version": "1.9.1",
       "depth": 0,
       "source": "registry",
       "dependencies": {
