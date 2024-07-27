@@ -598,24 +598,57 @@ PrefabInstance:
       propertyPath: playerhealthbar
       value: 
       objectReference: {fileID: 1594800348}
-    - target: {fileID: 4916045373611199992, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
-      propertyPath: damage
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionId
+      value: 9f3cadd9-f484-49dd-8d1f-20c9664ba0d2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_ActionName
+      value: Player/Sky[/XInputControllerWindows/rightStick/up,/Keyboard/l]
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5561349060912693503, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
-      propertyPath: dashSound
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1687225214}
+      objectReference: {fileID: 1581449826}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SkyInput
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4355706878944341290, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: m_ActionEvents.Array.data[7].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6670449688554426019, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1704982125}
     - target: {fileID: 8018511254305780306, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 718854920822684600, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1687225215}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
 --- !u!1 &705507993
@@ -1542,6 +1575,17 @@ MonoBehaviour:
   movementSpeed: 0
   spriteRenderer: {fileID: 149045808}
   characterLight: {fileID: 170132001}
+--- !u!114 &1581449826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6670449688554426019, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
+  m_PrefabInstance: {fileID: 582407503}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e2a521489553f4a93ea2b2a59534d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1594800345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,69 +1690,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBarSlider: {fileID: 1594800347}
---- !u!1 &1687225213
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1687225215}
-  - component: {fileID: 1687225214}
-  m_Layer: 0
-  m_Name: dashSound
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1687225214
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687225213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 941218948
-      Data2: 1132609776
-      Data3: -228263757
-      Data4: 1992010629
-    Path: event:/Sfxs/Dash/Dash
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!4 &1687225215
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1687225213}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 196432675}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1704982123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,9 +1741,14 @@ MonoBehaviour:
   pivot: {fileID: 1206749898}
   cameraSmoothSpeed: 0.125
   focusTime: 5
-  focusFOV: 35
+  focusFOV: 40
   focusCameraPosition: {x: 0, y: 2.8, z: -5}
   focusPointOffset: {x: 0, y: 1.7, z: 0}
+  skyCameraPosition: {x: 0, y: 1, z: -5}
+  skyCameraAngle: {x: -20, y: 0, z: 0}
+  skyCameraMoveSpeed: 5
+  skyCameraRotationSpeed: 10
+  isLookingAtSky: 0
 --- !u!1 &1727396298
 GameObject:
   m_ObjectHideFlags: 0

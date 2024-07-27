@@ -36,6 +36,7 @@ public class EnemyCombat : CharacterCombat
 
     public void HandleAttack()
     {
+        enemy.enemyAudio.PlayDamageSound();
         Collider[] allHits = Physics.OverlapSphere(attackPoint.position, damageRadius, hitLayer);
         foreach (Collider hit in allHits)
         {

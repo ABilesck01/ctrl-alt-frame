@@ -127,6 +127,8 @@ public class Star : Character
     public void ShowSequence(Sequence sequence)
     {
         Invoke(nameof(ResetAnimation), 1.1f);
+        
+        rb.velocity = Vector3.zero;
 
         switch (sequence)
         {

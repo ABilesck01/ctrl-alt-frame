@@ -33,7 +33,8 @@ public class EnemyHealth : CharacterHealth
             pushForceTotal = 1;
 
         base.TakeDamage(damage, attackPoint);
-
+        if (!isDead)
+            enemy.enemyAudio.PlayHitSound();
         if(!enemy.attack)
             characterAnimation.PlayAnimation(hit_anim);
 
@@ -55,6 +56,7 @@ public class EnemyHealth : CharacterHealth
 
     public override void Die()
     {
+        enemy.enemyAudio.PlayDeathSound();
         base.Die();
         characterAnimation.PlayAnimation(death_anim);
     }

@@ -25,6 +25,7 @@ public class Enemy : Character
 
     private EnemyMovement enemyMovement;
     private EnemyCombat enemyCombat;
+    [HideInInspector] public EnemyAudio enemyAudio;
     [HideInInspector] public EnemyAnimation enemyAnimation;
 
     public EnemyAIState CurrentAIState
@@ -40,6 +41,7 @@ public class Enemy : Character
         enemyMovement = GetComponent<EnemyMovement>();
         enemyCombat = GetComponent<EnemyCombat>();
         enemyAnimation = GetComponent<EnemyAnimation>();
+        enemyAudio = GetComponent<EnemyAudio>();
     }
 
     private void Start()

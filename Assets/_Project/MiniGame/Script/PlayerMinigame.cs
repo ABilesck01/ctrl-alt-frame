@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerMinigame : MonoBehaviour
 {
     [Header("VFX")]
-    [SerializeField] private ParticleSystem vfx;
+    [SerializeField] private GameObject vfx;
     [Header("Sign feedbacks")]
     [SerializeField] private GameObject sequenceUp;
     [SerializeField] private GameObject sequenceDown;
@@ -31,7 +31,7 @@ public class PlayerMinigame : MonoBehaviour
         if (!isOnMinigame)
         {
             isOnMinigame = true;
-            vfx.Play();
+            vfx.SetActive(true);
         }
     }
 
@@ -111,7 +111,7 @@ public class PlayerMinigame : MonoBehaviour
     {
         MiniGameController.instance.CheckMiniGame();
         isOnMinigame = false;
-        vfx.Stop();
+        vfx.SetActive(false);
     }
 
     public void ShowSequence(Sequence s)

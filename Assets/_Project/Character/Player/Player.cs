@@ -9,11 +9,13 @@ public class Player : Character
     [SerializeField] private Vector2 inputMovement;
     [SerializeField] private bool action_01;
     [SerializeField] private bool playerdash;
+    [SerializeField] private bool lookUp;
 
     [Header("Components")]
     [SerializeField] public PlayerMovement playerMovement;
     [SerializeField] public PlayerAnimation playerAnimation;
     [SerializeField] public PlayerCombat playerCombat;
+    [SerializeField] public PlayerCamera playerCamera;
     
 
     public void OnInputMovement(InputAction.CallbackContext context)
@@ -39,6 +41,17 @@ public class Player : Character
 
     }
 
+    public void SkyInput(InputAction.CallbackContext context)
+    {
+        if(context.performed)
+        {
+            lookUp = true;
+        }
+        else if(context.canceled)
+        {
+            lookUp = false;
+        }
+    }
 
     protected override void Update()
     {
@@ -53,6 +66,15 @@ public class Player : Character
         {
             playerdash =  false;
             playerMovement.Dash(inputMovement); 
+        }
+
+        if(lookUp && !MiniGameController.instance.hasMinigame)
+        {
+            playerCamera.isLookingAtSky = true;
+        }
+        else
+        {
+            playerCamera.isLookingAtSky = false;
         }
     }
 

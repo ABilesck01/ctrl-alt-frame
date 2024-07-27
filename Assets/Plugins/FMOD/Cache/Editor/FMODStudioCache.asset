@@ -129,12 +129,17 @@ MonoBehaviour:
   - {fileID: -4771732598763857480}
   - {fileID: -1408314513196839393}
   - {fileID: 8814921587065573823}
+  - {fileID: 7334151588350984487}
+  - {fileID: 1806378152254850184}
+  - {fileID: 6743716347697587761}
+  - {fileID: 7404194292696707820}
+  - {fileID: 7623120319064526093}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4991153942311646655}
   StringsBanks:
   - {fileID: 1769467196793397192}
-  cacheTime: 638576224723197510
+  cacheTime: 638576008100000000
   cacheVersion: 131619
 --- !u!114 &1769467196793397192
 MonoBehaviour:
@@ -151,11 +156,38 @@ MonoBehaviour:
   Path: fmodBancos/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638576224723197510
+  lastModified: 638576008020000000
   FileSizes:
   - Name: 
-    Value: 1068
+    Value: 1366
   Exists: 1
+--- !u!114 &1806378152254850184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo attack charge attack/Inimigo attack
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo attack charge attack/Inimigo attack
+  Guid:
+    Data1: -1877949666
+    Data2: 1316613625
+    Data3: -2065351489
+    Data4: 1640885049
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &4991153942311646655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,9 +203,117 @@ MonoBehaviour:
   Path: fmodBancos/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638576224723146377
+  lastModified: 638576008100000000
   FileSizes: []
   Exists: 1
+--- !u!114 &6743716347697587761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo walk/Walk loop
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo walk/Walk loop
+  Guid:
+    Data1: 422311971
+    Data2: 1311377825
+    Data3: -2121987409
+    Data4: 885602975
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 28798
+--- !u!114 &7334151588350984487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo take damage/inimigo_take_damage
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo take damage/inimigo_take_damage
+  Guid:
+    Data1: 1976910084
+    Data2: 1235808820
+    Data3: -721006662
+    Data4: -1556259097
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &7404194292696707820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo hit/Inimigo hit
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo hit/Inimigo hit
+  Guid:
+    Data1: -984325319
+    Data2: 1275124923
+    Data3: 306330773
+    Data4: -853184664
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 740
+--- !u!114 &7623120319064526093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo Death/Inimigo Death
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo Death/Inimigo Death
+  Guid:
+    Data1: 410836431
+    Data2: 1172127113
+    Data3: 383315586
+    Data4: -763515759
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &8814921587065573823
 MonoBehaviour:
   m_ObjectHideFlags: 0
