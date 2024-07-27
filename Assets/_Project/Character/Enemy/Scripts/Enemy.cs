@@ -14,14 +14,6 @@ public class Enemy : Character
     [Space]
     [SerializeField] private DOTweenAnimation starAnimation;
     [SerializeField] private Character lockedStar;
-    [Header("Sequence")]
-    [SerializeField] private int actionAmount;
-    [SerializeField] private int sequenceAmount;
-    [Header("Sequence Game objects")]
-    [SerializeField] private GameObject sequenceUp;
-    [SerializeField] private GameObject sequenceDown;
-    [SerializeField] private GameObject sequenceLeft;
-    [SerializeField] private GameObject sequenceRight;
 
     private float currentDistanceToRetreat;
     private Vector3 direction;
@@ -206,40 +198,17 @@ public class Enemy : Character
         direction.Normalize();
     }
 
-    private void Patrol()
-    {
-
-    }
-
-    public void ShowSequence(Sequence s)
-    {
-        GameObject sign = sequenceUp;
-
-        switch (s)
-        {
-            case Sequence.up:
-                sign = sequenceUp;
-                break;
-            case Sequence.down:
-                sign = sequenceDown;
-                break;
-            case Sequence.left:
-                sign = sequenceLeft;
-                break;
-            case Sequence.right:
-                sign = sequenceRight;
-                break;
-        }
-
-        GameObject signInstance = Instantiate(sign, transform.position, Quaternion.identity);
-        Destroy(signInstance, 1.5f);
-    }
-
     public void UnlockStar()
     {
-        
+        StartCoroutine(UnlockStarCoroutine());
+    }
+
+    private IEnumerator UnlockStarCoroutine()
+    {
+        yield return new WaitForSeconds(0.5f);
         starAnimation.DOPlay();
-        Invoke(nameof(SpawnStar), 0.41f);
+        yield return new WaitForSeconds(0.41f);
+        SpawnStar();
     }
 
     private void OnDrawGizmosSelected()

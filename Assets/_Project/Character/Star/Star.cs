@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,16 @@ public class Star : Character
     [Header("Following Player")]
     [SerializeField] private float minDistanceToPlayer;
     [SerializeField] private float followSpeed = 3f;
-
+    [Header("Animation")]
+    [SerializeField] private string glowAnimation;
+    [Header("Minigame")]
+    [SerializeField] private DOTweenAnimation enemyAnimation;
+    [SerializeField] private Enemy enemy;
+    [Header("Sequence")]
+    [SerializeField] private string upAnimation;
+    [SerializeField] private string downAnimation;
+    [SerializeField] private string leftAnimation;
+    [SerializeField] private string rightAnimation;
     private Transform player;
 
     private Vector3 startPoint;
@@ -90,23 +100,83 @@ public class Star : Character
     {
         if(collision.collider.CompareTag("Player") && currentStarSate == StarState.running)
         {
-            currentStarSate = StarState.FollowingPlayer;
+            currentStarSate = StarState.minigame;
+            MiniGameController.instance.StartMinigame(this);
+            rb.velocity = Vector3.zero;
         }
     }
 
     private void SetNewRandomPoint()
     {
-        float x = Random.Range(-runningDistance, runningDistance) + startPoint.x;
-        float z = Random.Range(-runningDistance, runningDistance) + startPoint.z;
-        
-        x *= 0.95f;
-        z *= 0.95f;
+        Vector3 possibleRandomPoint = Vector3.zero;
 
-        randomPoint = new Vector3(x, 0, z);
+        while (Vector3.Angle(possibleRandomPoint, player.position) < 35)
+        {
+            float x = Random.Range(-runningDistance, runningDistance) + startPoint.x;
+            float z = Random.Range(-runningDistance, runningDistance) + startPoint.z;
+
+            x *= 0.95f;
+            z *= 0.95f;
+
+            possibleRandomPoint = new Vector3(x, 0, z);
+        }
+
+        randomPoint = possibleRandomPoint;
+    }
+
+    public void ShowSequence(Sequence sequence)
+    {
+        Invoke(nameof(ResetAnimation), 1.1f);
+
+        switch (sequence)
+        {
+            case Sequence.up:
+                starAnimation.PlayAnimation(upAnimation);
+                break;
+            case Sequence.down:
+                starAnimation.PlayAnimation(downAnimation);
+                break;
+            case Sequence.left:
+                starAnimation.PlayAnimation(leftAnimation);
+                break;
+            case Sequence.right:
+                starAnimation.PlayAnimation(rightAnimation);
+                break;
+        }
+    }
+
+    private void ResetAnimation()
+    {
+        starAnimation.PlayAnimation(glowAnimation);
+    }
+
+    public void UnlockStar()
+    {
+        currentStarSate = StarState.FollowingPlayer;
+    }
+
+    public void WrongMinigame()
+    {
+        StartCoroutine(UnlockStarCoroutine());
+    }
+
+    private IEnumerator UnlockStarCoroutine()
+    {
+        yield return new WaitForSeconds(0.1f);
+        starAnimation.DOPlay();
+        yield return new WaitForSeconds(0.41f);
+        SpawnEnemy();
+    }
+
+    public void SpawnEnemy()
+    {
+        Instantiate(enemy, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }
 public enum StarState
 {
     running,
-    FollowingPlayer
+    FollowingPlayer,
+    minigame
 }

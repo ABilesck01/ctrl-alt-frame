@@ -19,7 +19,7 @@ public class MiniGameController : MonoBehaviour
     public UnityEvent OnWrongMinigame;
 
     public bool hasMinigame = false;
-    private Enemy characterOnMinigame;
+    private Star characterOnMinigame;
 
     public int SequenceAmount { get => sequenceAmount; set => sequenceAmount = value; }
     public int ActionAmountBySequence { get => actionAmountBySequence; set => actionAmountBySequence = value; }
@@ -33,10 +33,10 @@ public class MiniGameController : MonoBehaviour
     {
         //inscribe events
         var allEnemies = FindObjectsOfType<EnemyHealth>();
-        foreach (var enemy in allEnemies)
-        {
-            enemy.OnCharacterDeath.AddListener(StartMinigame);
-        }
+        //foreach (var enemy in allEnemies)
+        //{
+        //    enemy.OnCharacterDeath.AddListener(StartMinigame);
+        //}
     }
 
     public void AddActionToSequence(Sequence sequence)
@@ -44,9 +44,9 @@ public class MiniGameController : MonoBehaviour
         playerSequence.Add(sequence);
     }
 
-    private void StartMinigame(CharacterHealth character)
+    public void StartMinigame(Star character)
     {
-        characterOnMinigame = character.GetComponent<Enemy>();
+        characterOnMinigame = character;
         StartCoroutine(StartMinigameCoroutine());
     }
 
@@ -55,11 +55,14 @@ public class MiniGameController : MonoBehaviour
         yield return new WaitForSeconds(startMinigameDelay);
         OnStartMinimage?.Invoke(characterOnMinigame);
         RandomSequence();
-        StartCoroutine(showSequenceToPlayer());
+        StartCoroutine(ShowSequenceToPlayer());
     }
 
     private void RandomSequence()
     {
+        enemySequence.Clear();
+        playerSequence.Clear();
+
         for (int i = 0; i < actionAmountBySequence; i++)
         {
             int randSequence = Random.Range(0,4);
@@ -67,7 +70,7 @@ public class MiniGameController : MonoBehaviour
         }
         
     }
-    IEnumerator showSequenceToPlayer()
+    IEnumerator ShowSequenceToPlayer()
     {
         yield return new WaitForSeconds(0.5f);
 
@@ -75,7 +78,7 @@ public class MiniGameController : MonoBehaviour
         {
             Debug.Log(enemySequence[i]);
             characterOnMinigame.ShowSequence(enemySequence[i]);
-            yield return new WaitForSeconds(1f);  
+            yield return new WaitForSeconds(1.5f);  
         }
 
         hasMinigame = true;
@@ -88,6 +91,7 @@ public class MiniGameController : MonoBehaviour
 
         if (enemySequence.Count != playerSequence.Count) {
             Debug.Log("wrong sequence");
+            characterOnMinigame.WrongMinigame();
             OnWrongMinigame?.Invoke();
             return;
         }
@@ -96,6 +100,7 @@ public class MiniGameController : MonoBehaviour
             if (playerSequence[i] != enemySequence[i])
             {
                 Debug.Log("wrong sequence");
+                characterOnMinigame.WrongMinigame();
                 OnWrongMinigame?.Invoke();
                 return;
             }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,26 @@ public class PlayerMovement : CharacterMovement
 
     public float dashForce = 0f;
     public float dashTime = 0f;
+
+    private void Start()
+    {
+        MiniGameController.instance.OnStartMinimage.AddListener(OnStartMinigame);
+        MiniGameController.instance.OnCorrectMinigame.AddListener(OnFinishMinigame);
+        MiniGameController.instance.OnWrongMinigame.AddListener(OnFinishMinigame);
+    }
+
+    private void OnStartMinigame(Character arg0)
+    {
+        canDash = false;
+        canMove = false;
+    }
+
+    private void OnFinishMinigame()
+    {
+        canDash = true;
+        canMove = true;
+    }
+
     public override void HandleMovement(Vector2 direction, float speed)
     {
         if(!canMove)
@@ -43,6 +64,7 @@ public class PlayerMovement : CharacterMovement
         rb.AddForce(movement * dashForce, ForceMode.VelocityChange);
         StartCoroutine(ResetDash());
     }
+    
     IEnumerator ResetDash()
     {
         yield return new WaitForSeconds(dashTime);
@@ -50,7 +72,6 @@ public class PlayerMovement : CharacterMovement
         canMove = true;
     }
     
-
     public override void handleRotation(Vector2 direction)
     {
         if(!canMove)

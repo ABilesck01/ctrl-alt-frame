@@ -505,14 +505,8 @@ MonoBehaviour:
   attackDistance: 2
   distanceToRetreat: 10
   timeBtwAttacks: 9.3
-  starAnimation: {fileID: 0}
-  lockedStar: {fileID: 6468932446870329544, guid: 2e56de1fd648f01408a930a9b5cb4a94, type: 3}
-  actionAmount: 0
-  sequenceAmount: 0
-  sequenceUp: {fileID: 1401105734387144159, guid: 58829f2afc9a8aa42bead4f47def45f6, type: 3}
-  sequenceDown: {fileID: 1444188435319926861, guid: a70cbcdc415aa784ab20f1976829f571, type: 3}
-  sequenceLeft: {fileID: 3400749442718752553, guid: e3b9442cc05433941873dd20f680e49b, type: 3}
-  sequenceRight: {fileID: 5650084642362935742, guid: e8f1355b432b7bd4c82954d06c967195, type: 3}
+  starAnimation: {fileID: 6062273624581523328}
+  lockedStar: {fileID: 4575570519476411227, guid: 2e56de1fd648f01408a930a9b5cb4a94, type: 3}
   attack: 0
   enemyAnimation: {fileID: 0}
 --- !u!114 &2581993626045690240
@@ -562,7 +556,19 @@ MonoBehaviour:
   upPushForce: 100
   OnCharacterDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7584202202952584072}
+        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
+        m_MethodName: UnlockStar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnCharacterReset:
     m_PersistentCalls:
       m_Calls: []
