@@ -1021,6 +1021,7 @@ MonoBehaviour:
   hitSound: {fileID: 674801785613991676}
   deathSound: {fileID: 7546924505287423253}
   damageSound: {fileID: 851886009871378994}
+  idleSound: {fileID: 7440956468260469101}
 --- !u!1 &8728745805353194149
 GameObject:
   m_ObjectHideFlags: 0

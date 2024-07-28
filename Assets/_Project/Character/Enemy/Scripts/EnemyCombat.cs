@@ -20,11 +20,15 @@ public class EnemyCombat : CharacterCombat
         skeletonAnimation.state.Event += State_Event;
     }
 
+    private void OnDisable()
+    {
+        skeletonAnimation.state.Event += State_Event;
+    }
+
     private void State_Event(Spine.TrackEntry trackEntry, Spine.Event e)
     {
         if(e.Data.Name.Contains("hit"))
         {
-            Debug.Log("handle attacks");
             HandleAttack();
         }
     }

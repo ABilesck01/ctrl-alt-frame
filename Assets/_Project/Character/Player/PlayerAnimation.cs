@@ -2,17 +2,39 @@ using Spine.Unity;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimation : CharacterAnimation
 {
     [SerializeField] private string idle;
     [SerializeField] private string walk;
+    [Header("Audio")]
+    [SerializeField] private StudioEventEmitter footstep;
+
     private SkeletonAnimation skeletonAnimation;
 
     protected override void Awake()
     {
         skeletonAnimation = GetComponentInChildren<SkeletonAnimation>();
+    }
+
+    private void Start()
+    {
+        skeletonAnimation.state.Event += State_Event;
+    }
+
+    private void OnDisable()
+    {
+        skeletonAnimation.state.Event += State_Event;
+    }
+
+    private void State_Event(Spine.TrackEntry trackEntry, Spine.Event e)
+    {
+        if (e.Data.Name.ToLower().Contains("footstep"))
+        {
+            footstep.Play();
+        }
     }
 
     public override void HandleMovementAnimation(float moveAmount)
