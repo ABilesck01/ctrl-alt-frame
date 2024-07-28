@@ -48,20 +48,20 @@ Material:
     - _AnimCutOut: 2.07
     - _FoamAmount: 0.8
     - _FoamCutout: 0.64
-    - _FoamFallOff: 2.7
-    - _FoamShoreWidth: 0.95
-    - _FoamTiling: 0.99
+    - _FoamFallOff: 2.1
+    - _FoamShoreWidth: 0.04
+    - _FoamTiling: 1.74
     - _FoanDepth: 0.21
     - _Grapth: 1
-    - _GrapthFalloff: 4.5
+    - _GrapthFalloff: 8.72
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
     - _AnimColor: {r: 1, g: 1, b: 1, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _MainColor: {r: 0, g: 0.10221359, b: 0.4056604, a: 0}
-    - _ShoreColor: {r: 0, g: 0.4830203, b: 1, a: 1}
+    - _MainColor: {r: 0, g: 0.07964024, b: 0.31132078, a: 0}
+    - _ShoreColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2087176641583313137
 MonoBehaviour:
