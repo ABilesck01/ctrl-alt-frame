@@ -55,6 +55,9 @@ public class Player : Character
 
     protected override void Update()
     {
+        if (MiniGameController.instance.hasMinigame)
+            return;
+
         playerMovement.handleRotation(inputMovement);
         playerAnimation.HandleMovementAnimation(inputMovement.sqrMagnitude);
         if(action_01)

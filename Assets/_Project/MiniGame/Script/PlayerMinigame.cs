@@ -10,16 +10,27 @@ public class PlayerMinigame : MonoBehaviour
     [Header("VFX")]
     [SerializeField] private GameObject vfx;
     [Header("Sign feedbacks")]
-    [SerializeField] private GameObject sequenceUp;
-    [SerializeField] private GameObject sequenceDown;
-    [SerializeField] private GameObject sequenceLeft;
-    [SerializeField] private GameObject sequenceRight;
+    [SerializeField] private string idle;
+    [SerializeField] private string sequence_up;
+    [SerializeField] private string sequence_down;
+    [SerializeField] private string sequence_left;
+    [SerializeField] private string sequence_right;
+
+    private PlayerAnimation playerAnimation;
+    private PlayerMovement playerMovement;
 
     private bool isOnMinigame;
+    private bool minigameInputDelay;
     private bool up;
     private bool down;
     private bool left;
     private bool right;
+
+    private void Awake()
+    {
+        playerAnimation = GetComponent<PlayerAnimation>();
+        playerMovement = GetComponent<PlayerMovement>();
+    }
 
     private void Start()
     {
@@ -70,13 +81,17 @@ public class PlayerMinigame : MonoBehaviour
         if (!MiniGameController.instance.hasMinigame)
             return;
 
+        if (minigameInputDelay)
+            return;
+
         if (up)
         {
             up = false;
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.up);
             MiniGameController.instance.AddActionToSequence(Sequence.up);
-            Invoke(nameof(FinishMinigame), 1.5f);
+
+            Invoke(nameof(FinishMinigame), 1.8f);
         }
 
         if(down)
@@ -85,7 +100,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.down);
             MiniGameController.instance.AddActionToSequence(Sequence.down);
-            Invoke(nameof(FinishMinigame), 1.5f);
+            Invoke(nameof(FinishMinigame), 1.8f);
         }
 
         if (left)
@@ -94,7 +109,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.left);
             MiniGameController.instance.AddActionToSequence(Sequence.left);
-            Invoke(nameof(FinishMinigame), 1.5f);
+            Invoke(nameof(FinishMinigame), 1.8f);
         }
 
         if(right)
@@ -103,7 +118,7 @@ public class PlayerMinigame : MonoBehaviour
             CancelInvoke(nameof(FinishMinigame));
             ShowSequence(Sequence.right);
             MiniGameController.instance.AddActionToSequence(Sequence.right);
-            Invoke(nameof(FinishMinigame), 1.5f);
+            Invoke(nameof(FinishMinigame), 1.8f);
         }
     }
 
@@ -114,27 +129,36 @@ public class PlayerMinigame : MonoBehaviour
         vfx.SetActive(false);
     }
 
+    private void ResetDelay()
+    {
+        minigameInputDelay = false;
+        playerAnimation.PlayAnimation(idle);
+    }
+
     public void ShowSequence(Sequence s)
     {
-        GameObject sign = sequenceUp;
+        Invoke(nameof(ResetDelay), 1.1f);
+        string sign = "";
         PlayerCamera.instance.ShakeCamera(.15f, .2f);
         switch (s)
         {
             case Sequence.up:
-                sign = sequenceUp;
+                sign = sequence_up;
                 break;
             case Sequence.down:
-                sign = sequenceDown;
+                sign = sequence_down;
                 break;
             case Sequence.left: 
-                sign = sequenceLeft;
+                sign = playerMovement.FacingRight() ? sequence_left : sequence_right;
                 break;
             case Sequence.right:
-                sign = sequenceRight;
+                sign = playerMovement.FacingRight() ? sequence_right : sequence_left;
                 break;
         }
 
-        GameObject signInstance = Instantiate(sign, transform.position, Quaternion.identity);
-        Destroy(signInstance, 1f);
+        playerAnimation.PlayAnimation(sign);
+
+        //GameObject signInstance = Instantiate(sign, transform.position, Quaternion.identity);
+        //Destroy(signInstance, 1f);
     }
 }

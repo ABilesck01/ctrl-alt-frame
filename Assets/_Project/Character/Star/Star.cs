@@ -101,6 +101,7 @@ public class Star : Character
     {
         if(collision.collider.CompareTag("Player") && currentStarSate == StarState.running)
         {
+            rb.isKinematic = true;
             currentStarSate = StarState.minigame;
             MiniGameController.instance.StartMinigame(this);
             rb.velocity = Vector3.zero;
@@ -127,6 +128,7 @@ public class Star : Character
 
     public void ShowSequence(Sequence sequence)
     {
+        starMovement.handleRotation(new Vector2(1, 0)); //always face right direction on minigame
         Invoke(nameof(ResetAnimation), 1.1f);
         
         rb.velocity = Vector3.zero;
@@ -155,6 +157,7 @@ public class Star : Character
 
     public void UnlockStar()
     {
+        rb.isKinematic = false;
         currentStarSate = StarState.FollowingPlayer;
     }
 

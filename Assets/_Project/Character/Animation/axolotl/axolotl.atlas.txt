@@ -1,0 +1,7 @@
+axolotl.png
+size:1015,728
+filter:Linear,Linear
+pma:true
+main character atlas
+bounds:2,2,1011,724
+offsets:49,284,1080,1080

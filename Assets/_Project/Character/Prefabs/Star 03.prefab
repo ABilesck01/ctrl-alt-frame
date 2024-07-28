@@ -197,10 +197,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 1
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 1, z: 0.5}
 --- !u!114 &4575570519476411227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,12 +213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11cd7865c5785fb428c5a2c82de8bc74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterColor: {r: 0.88235295, g: 0.007843138, b: 0.8980392, a: 1}
+  characterColor: {r: 0.9490196, g: 0.92941177, b: 0.4627451, a: 1}
   movementSpeed: 0
   spriteRenderer: {fileID: 7260686556065607734}
   characterLight: {fileID: 1268870193423191973}
   currentStarSate: 0
-  constelation: 2
+  constelation: 0
   runningDistance: 15
   runningSpeed: 3.1
   minDistanceToPlayer: 2

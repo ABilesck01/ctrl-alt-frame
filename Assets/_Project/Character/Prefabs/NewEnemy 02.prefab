@@ -357,7 +357,7 @@ MonoBehaviour:
       Data2: 1311377825
       Data3: -2121987409
       Data4: 885602975
-    Path: event:/Sfxs/Inimigo/Inimigo walk/Walk loop
+    Path: event:/Sfxs/Inimigo/inimigo Walk loop
   Event: 
   PlayEvent: 11
   StopEvent: 12
@@ -420,7 +420,7 @@ MonoBehaviour:
       Data2: 1172127113
       Data3: 383315586
       Data4: -763515759
-    Path: event:/Sfxs/Inimigo/Inimigo Death/Inimigo Death
+    Path: event:/Sfxs/Inimigo/inimigo Death
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -601,7 +601,7 @@ MonoBehaviour:
       Data2: 1275124923
       Data3: 306330773
       Data4: -853184664
-    Path: event:/Sfxs/Inimigo/Inimigo hit/Inimigo hit
+    Path: event:/Sfxs/Inimigo/inimigo hit
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
       Data2: 1235808820
       Data3: -721006662
       Data4: -1556259097
-    Path: event:/Sfxs/Inimigo/Inimigo take damage/inimigo_take_damage
+    Path: event:/Sfxs/Inimigo/inimigo_take_damage
   Event: 
   PlayEvent: 0
   StopEvent: 0
@@ -766,10 +766,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.65
   m_Height: 2.8
   m_Direction: 1
-  m_Center: {x: 0, y: 1.4, z: 0.72}
+  m_Center: {x: 0, y: 1.4, z: 0.8}
 --- !u!114 &7584202202952584072
 MonoBehaviour:
   m_ObjectHideFlags: 0

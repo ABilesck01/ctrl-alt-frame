@@ -148,7 +148,7 @@ Transform:
   - {fileID: 852570308422423225}
   m_Father: {fileID: 718854920822684600}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2082395602066648458
+--- !u!1 &2349134157794588371
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -156,51 +156,61 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1514891355900620054}
-  - component: {fileID: 6355138094850859548}
+  - component: {fileID: 2069096984501507429}
+  - component: {fileID: 4725671085715218847}
+  - component: {fileID: 4484204885619688010}
+  - component: {fileID: 3259090466991242914}
   m_Layer: 0
-  m_Name: GFX
+  m_Name: gfx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1514891355900620054
+--- !u!4 &2069096984501507429
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082395602066648458}
+  m_GameObject: {fileID: 2349134157794588371}
   serializedVersion: 2
   m_LocalRotation: {x: 0.2588191, y: 0, z: 0, w: 0.9659258}
-  m_LocalPosition: {x: 0, y: 0.85, z: 0.5}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.45, y: 0.45, z: 0.45}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 718854920822684600}
   m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
---- !u!212 &6355138094850859548
-SpriteRenderer:
+--- !u!33 &4725671085715218847
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082395602066648458}
+  m_GameObject: {fileID: 2349134157794588371}
+  m_Mesh: {fileID: 0}
+--- !u!23 &4484204885619688010
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349134157794588371}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 0
+  m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
+  m_RayTracingMode: 2
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3a89bf846adc4794a96c0d75eca2bc22, type: 2}
+  - {fileID: 2100000, guid: 691051872dee0154baba4b32a059fea4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -213,7 +223,7 @@ SpriteRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -221,17 +231,50 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 214532198, guid: 18e491333252f2247928fcc599807d09, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 0.2, y: 0.2}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3259090466991242914
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349134157794588371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d247ba06193faa74d9335f5481b2b56c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonDataAsset: {fileID: 11400000, guid: 862eb51b589db6e4cb7c3408ab9d6520, type: 2}
+  initialSkinName: 
+  fixPrefabOverrideViaMeshFilter: 2
+  initialFlipX: 0
+  initialFlipY: 0
+  updateWhenInvisible: 3
+  separatorSlotNames: []
+  zSpacing: 0
+  useClipping: 1
+  immutableTriangles: 0
+  pmaVertexColors: 1
+  clearStateOnDisable: 0
+  tintBlack: 0
+  singleSubmesh: 0
+  fixDrawOrder: 0
+  addNormals: 0
+  calculateTangents: 0
+  maskInteraction: 0
+  maskMaterials:
+    materialsMaskDisabled: []
+    materialsInsideMask: []
+    materialsOutsideMask: []
+  disableRenderingOnOverride: 1
+  physicsPositionInheritanceFactor: {x: 1, y: 1}
+  physicsRotationInheritanceFactor: 1
+  physicsMovementRelativeTo: {fileID: 0}
+  updateTiming: 1
+  unscaledTime: 0
+  _animationName: axolotl_idle
+  loop: 1
+  timeScale: 1
 --- !u!1 &3012726606844272228
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +465,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5904104592427645178}
-  - {fileID: 1514891355900620054}
+  - {fileID: 2069096984501507429}
   - {fileID: 1958048435888635990}
   - {fileID: 2602744441878920143}
   - {fileID: 1764188514835164256}
@@ -653,10 +696,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.8
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Center: {x: 0, y: 0.8, z: 0.5}
 --- !u!114 &6670449688554426019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,7 +714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterColor: {r: 1, g: 1, b: 1, a: 1}
   movementSpeed: 3
-  spriteRenderer: {fileID: 6355138094850859548}
+  spriteRenderer: {fileID: 0}
   characterLight: {fileID: 2823102583820400488}
   inputMovement: {x: 0, y: 0}
   action_01: 0
@@ -694,7 +737,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pivotRotation: {fileID: 1958048435888635990}
-  sprite: {fileID: 6355138094850859548}
+  sprite: {fileID: 0}
+  gfx: {fileID: 2069096984501507429}
   dashSound: {fileID: 2375896091234417744}
   canMove: 1
   canDash: 1
@@ -712,6 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d4d18e2d54ecd4fbb66625ada7a12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idle: axolotl_idle
+  walk: axolotl_run
 --- !u!114 &4916045373611199992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -742,7 +788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60473f9f3e2392a46bc2b43c31090ed7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   currentHealth: 0
   backwardsPushForce: 150
   upPushForce: 100
@@ -768,10 +814,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vfx: {fileID: 8061603388486686735}
-  sequenceUp: {fileID: 1401105734387144159, guid: 58829f2afc9a8aa42bead4f47def45f6, type: 3}
-  sequenceDown: {fileID: 1444188435319926861, guid: a70cbcdc415aa784ab20f1976829f571, type: 3}
-  sequenceLeft: {fileID: 3400749442718752553, guid: e3b9442cc05433941873dd20f680e49b, type: 3}
-  sequenceRight: {fileID: 5650084642362935742, guid: e8f1355b432b7bd4c82954d06c967195, type: 3}
+  idle: axolotl_idle
+  sequence_up: axolotl_minigame_up
+  sequence_down: axolotl_minigame_down
+  sequence_left: axolotl_minigame_left
+  sequence_right: axolotl_minigame_right
 --- !u!1 &8180740752452557262
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,12 +5,15 @@ using UnityEngine;
 
 public class PlayerMovement : CharacterMovement
 {
+    [SerializeField] private Transform gfx;
+    [Header("Audio")]
     [SerializeField]FMODUnity.StudioEventEmitter dashSound;
     
     public bool canMove = true;
 
     public bool canDash = true;
-     
+
+    public bool FacingRight() => facingRight;
 
     public float dashForce = 0f;
     public float dashTime = 0f;
@@ -81,6 +84,17 @@ public class PlayerMovement : CharacterMovement
             return;
         }
 
-        base.handleRotation(direction);
+        if (direction.x > 0 && !facingRight)
+        {
+            facingRight = true;
+            gfx.rotation = Quaternion.Euler(0, 0, 0);
+            pivotRotation.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        else if (direction.x < 0 && facingRight)
+        {
+            facingRight = false;
+            gfx.rotation = Quaternion.Euler(0, 180, 0);
+            pivotRotation.rotation = Quaternion.Euler(0, 180, 0);
+        }
     }
 }

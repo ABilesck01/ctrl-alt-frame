@@ -14,7 +14,9 @@ public class PlayerCombat : CharacterCombat
 
     public override void HandlePunch()
     {
-        player.playerAnimation.PlayAnimation("swoosh");
+        //player.playerAnimation.PlayAnimation("swoosh");
+        HandleAttack();
+        Debug.Log("Attack!");
     }
 
     public void HandleAttack()
