@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-    [SerializeField] private EnemyAIState currentAIState;
+    [SerializeField] public EnemyAIState currentAIState;
     [SerializeField] private float viewRadius = 3;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private float attackDistance = 1;

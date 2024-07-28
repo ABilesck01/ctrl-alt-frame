@@ -353,10 +353,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 422311971
-      Data2: 1311377825
-      Data3: -2121987409
-      Data4: 885602975
+      Data1: 640577759
+      Data2: 1082377835
+      Data3: -1187205503
+      Data4: -1214187910
     Path: event:/Sfxs/Inimigo/inimigo Walk loop
   Event: 
   PlayEvent: 11
@@ -416,10 +416,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 410836431
-      Data2: 1172127113
-      Data3: 383315586
-      Data4: -763515759
+      Data1: 1962329444
+      Data2: 1271656569
+      Data3: 1736991400
+      Data4: -1187769210
     Path: event:/Sfxs/Inimigo/inimigo Death
   Event: 
   PlayEvent: 0
@@ -597,10 +597,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -984325319
-      Data2: 1275124923
-      Data3: 306330773
-      Data4: -853184664
+      Data1: 1104481076
+      Data2: 1169954565
+      Data3: -468451923
+      Data4: 164978874
     Path: event:/Sfxs/Inimigo/inimigo hit
   Event: 
   PlayEvent: 0
@@ -660,10 +660,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 1976910084
-      Data2: 1235808820
-      Data3: -721006662
-      Data4: -1556259097
+      Data1: 81148044
+      Data2: 1136672862
+      Data3: 1365988781
+      Data4: 1090993860
     Path: event:/Sfxs/Inimigo/inimigo_take_damage
   Event: 
   PlayEvent: 0
@@ -840,28 +840,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90318f6636537cf4db1a7fbbc9facd1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 2
+  maxHealth: 12
   currentHealth: 0
   backwardsPushForce: 150
   upPushForce: 100
-  OnCharacterDeath:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7584202202952584072}
-        m_TargetAssemblyTypeName: Enemy, Assembly-CSharp
-        m_MethodName: UnlockStar
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnCharacterReset:
-    m_PersistentCalls:
-      m_Calls: []
   hitTime: 0.4
   hit_anim: anim_enemy_hit
   death_anim: anim_enemy_die

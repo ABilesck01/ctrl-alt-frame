@@ -11,6 +11,15 @@ public class PlayerHealth : CharacterHealth
     [SerializeField] private Color backcolor;
     private Player player;
 
+    private Vector3 startPos;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        startPos = transform.position;
+    }
+
     private void Start()
     {
         playerhealthbar.SetMaxHealth(MaxHealth);
@@ -47,6 +56,6 @@ public class PlayerHealth : CharacterHealth
         base.ResetCaracter();
         playerhealthbar.SetHealth(Currenthealth);
         player.playerMovement.canMove = true;
-        transform.position = Vector3.zero;
+        transform.position = startPos;
     }
 }

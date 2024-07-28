@@ -1,32 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9076187377793443448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfxs/Inimigo/inimigo Walk loop
-  m_EditorClassIdentifier: 
-  Path: event:/Sfxs/Inimigo/inimigo Walk loop
-  Guid:
-    Data1: 422311971
-    Data2: 1311377825
-    Data3: -2121987409
-    Data4: 885602975
-  Banks:
-  - {fileID: 4991153942311646655}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 5928
 --- !u!114 &-8884361992618113960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Estrela/Loop estrela
   Guid:
-    Data1: -1708664044
-    Data2: 1167474306
-    Data3: 67431358
-    Data4: 1476620048
+    Data1: -1932883115
+    Data2: 1237456729
+    Data3: -982755442
+    Data4: 580891315
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 1
@@ -68,10 +41,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Ui/Click
   Guid:
-    Data1: 1222484487
-    Data2: 1327083246
-    Data3: 2131529907
-    Data4: 1544107217
+    Data1: 561418807
+    Data2: 1125251109
+    Data3: 1342816179
+    Data4: 915033840
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -81,7 +54,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1000
---- !u!114 &-8060729466009492582
+--- !u!114 &-7993777312135550981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,24 +64,48 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfxs/Inimigo/inimigo hit
+  m_Name: snapshot:/BOSS
   m_EditorClassIdentifier: 
-  Path: event:/Sfxs/Inimigo/inimigo hit
+  Path: snapshot:/BOSS
   Guid:
-    Data1: -984325319
-    Data2: 1275124923
-    Data3: 306330773
-    Data4: -853184664
+    Data1: 1236026817
+    Data2: 1227339377
+    Data3: -1106268264
+    Data4: -834647866
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 680
---- !u!114 &-4771732598763857480
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-7702305906959961934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Mus_system/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 1512028382
+    data2: 2936271814
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-7144576471119263412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,14 +115,42 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfxs/Dash/Dash
+  m_Name: event:/Musics/Mus_system
   m_EditorClassIdentifier: 
-  Path: event:/Sfxs/Dash/Dash
+  Path: event:/Musics/Mus_system
   Guid:
-    Data1: 941218948
-    Data2: 1132609776
-    Data3: -228263757
-    Data4: 1992010629
+    Data1: -903976105
+    Data2: 1236673950
+    Data3: -123948361
+    Data4: 1249309310
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -7702305906959961934}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 124000
+--- !u!114 &-5069665632302271221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Nomuro/Nomuro attack
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Nomuro/Nomuro attack
+  Guid:
+    Data1: -931237474
+    Data2: 1086183094
+    Data3: -1486251628
+    Data4: 229845604
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -134,7 +159,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 535
+  Length: 2197
 --- !u!114 &-4721842162411994206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,10 +174,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Estrela/Estrelinha explosao
   Guid:
-    Data1: 1058008269
-    Data2: 1328285394
-    Data3: -929487688
-    Data4: -1085713090
+    Data1: 494008919
+    Data2: 1327813270
+    Data3: -2082694262
+    Data4: 162698484
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -176,10 +201,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Soundscape/Ambiencia etherea festival
   Guid:
-    Data1: 2075996735
-    Data2: 1105624232
-    Data3: -1567353943
-    Data4: -1779220995
+    Data1: -1276034076
+    Data2: 1325410082
+    Data3: 1141355663
+    Data4: -384896183
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 1
@@ -203,10 +228,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Estrela/Coleta de estrela
   Guid:
-    Data1: -1642433069
-    Data2: 1080036975
-    Data3: 639950774
-    Data4: -1320151246
+    Data1: 367307473
+    Data2: 1107740528
+    Data3: -991262059
+    Data4: 643467195
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -230,10 +255,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Ui/Hover
   Guid:
-    Data1: 87780270
-    Data2: 1263353689
-    Data3: 346606266
-    Data4: -98231426
+    Data1: 874063507
+    Data2: 1212483726
+    Data3: -2088987735
+    Data4: -393115564
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -243,33 +268,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 450
---- !u!114 &-3396660923733285590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfxs/Inimigo/inimigo Death
-  m_EditorClassIdentifier: 
-  Path: event:/Sfxs/Inimigo/inimigo Death
-  Guid:
-    Data1: 410836431
-    Data2: 1172127113
-    Data3: 383315586
-    Data4: -763515759
-  Banks:
-  - {fileID: 4991153942311646655}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 3000
 --- !u!114 &-3162731381737549627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,10 +282,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Estrela/Estrelinha jump
   Guid:
-    Data1: -914292610
-    Data2: 1074420148
-    Data3: -931647042
-    Data4: -1919665542
+    Data1: 718771
+    Data2: 1303250782
+    Data3: -965400182
+    Data4: -1863583905
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -297,7 +295,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1693
---- !u!114 &-1274709996525574610
+--- !u!114 &-2193806884271326457
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -307,23 +305,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfxs/Inimigo/inimigo attack
+  m_Name: snapshot:/Pause
   m_EditorClassIdentifier: 
-  Path: event:/Sfxs/Inimigo/inimigo attack
+  Path: snapshot:/Pause
   Guid:
-    Data1: -1877949666
-    Data2: 1316613625
-    Data3: -2065351489
-    Data4: 1640885049
+    Data1: 424833406
+    Data2: 1265663721
+    Data3: 784190638
+    Data4: 2019223646
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 8000
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1104313075422550458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/SFX_footsteps/Floorstep
+  m_EditorClassIdentifier: 
+  Name: Floorstep
+  StudioPath: 
+  Min: 0
+  Max: 5
+  Default: 0
+  ID:
+    data1: 3031287569
+    data2: 936438273
+  Type: 1
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1013663987783312066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,10 +360,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Estrela/Estrelinha footsteps walk
   Guid:
-    Data1: 499918355
-    Data2: 1140270484
-    Data3: -847050092
-    Data4: -1655038524
+    Data1: 1030424206
+    Data2: 1166422079
+    Data3: -940737656
+    Data4: 1884310183
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -365,10 +387,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Estrela/Estrelinha footsteps run
   Guid:
-    Data1: -1706178489
-    Data2: 1136053915
-    Data3: -440025720
-    Data4: 2071622077
+    Data1: -1487357460
+    Data2: 1143643969
+    Data3: 673369764
+    Data4: -1049777810
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -378,6 +400,61 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 120
+--- !u!114 &-446553034407079948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo_take_damage
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo_take_damage
+  Guid:
+    Data1: 81148044
+    Data2: 1136672862
+    Data3: 1365988781
+    Data4: 1090993860
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 780
+--- !u!114 &-373015430070748395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Nomuro/SFX_footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Nomuro/SFX_footsteps
+  Guid:
+    Data1: 1433261049
+    Data2: 1255411477
+    Data3: -163376985
+    Data4: 1012029604
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: -1104313075422550458}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 656
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,14 +471,9 @@ MonoBehaviour:
   - {fileID: 1769467196793397192}
   - {fileID: 4991153942311646655}
   EditorEvents:
-  - {fileID: -4771732598763857480}
-  - {fileID: 4703772935309755568}
   - {fileID: -8571622634961423013}
   - {fileID: -1013663987783312066}
   - {fileID: -8884361992618113960}
-  - {fileID: -1274709996525574610}
-  - {fileID: -9076187377793443448}
-  - {fileID: -8060729466009492582}
   - {fileID: -4100730234051906488}
   - {fileID: -604615495688610946}
   - {fileID: 7831395958277519584}
@@ -410,16 +482,83 @@ MonoBehaviour:
   - {fileID: -3660857334561062200}
   - {fileID: 3107984031317978095}
   - {fileID: -4721842162411994206}
-  - {fileID: -3396660923733285590}
   - {fileID: -3804181891394855643}
   - {fileID: 7499661229317623761}
+  - {fileID: 283282311861815980}
+  - {fileID: 5295411355280732946}
+  - {fileID: 4797328722485038858}
+  - {fileID: -7144576471119263412}
+  - {fileID: 5079629174653245769}
+  - {fileID: 7750901158759845775}
+  - {fileID: -2193806884271326457}
+  - {fileID: -446553034407079948}
+  - {fileID: -5069665632302271221}
+  - {fileID: 8265472534471951750}
+  - {fileID: -7993777312135550981}
+  - {fileID: 268137239133249251}
+  - {fileID: 5686449337540065159}
+  - {fileID: -373015430070748395}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4991153942311646655}
   StringsBanks:
   - {fileID: 1769467196793397192}
-  cacheTime: 638577159790000000
+  cacheTime: 638577890700000000
   cacheVersion: 131619
+--- !u!114 &268137239133249251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Nomuro/Nomuro simple damage
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Nomuro/Nomuro simple damage
+  Guid:
+    Data1: -1385963822
+    Data2: 1181233638
+    Data3: -598669673
+    Data4: -1304834227
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1071
+--- !u!114 &283282311861815980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Nomuro/Nomuro dying
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Nomuro/Nomuro dying
+  Guid:
+    Data1: -261222617
+    Data2: 1093741441
+    Data3: -38177882
+    Data4: -676259766
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &1566099698135482366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,10 +573,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Soundscape/Ambiencia areia
   Guid:
-    Data1: -36832124
-    Data2: 1108161941
-    Data3: 1159819907
-    Data4: -1839586410
+    Data1: -1079046515
+    Data2: 1077735036
+    Data3: 2087270315
+    Data4: -190278492
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 1
@@ -462,10 +601,10 @@ MonoBehaviour:
   Path: fmodBancos/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638577159750000000
+  lastModified: 638577890630000000
   FileSizes:
   - Name: 
-    Value: 1794
+    Value: 2430
   Exists: 1
 --- !u!114 &3107984031317978095
 MonoBehaviour:
@@ -481,10 +620,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Soundscape/Ambiencia agua
   Guid:
-    Data1: 958524613
-    Data2: 1139129100
-    Data3: -1960018013
-    Data4: -1330280961
+    Data1: -1767094801
+    Data2: 1302998755
+    Data3: -2070154851
+    Data4: -1996750286
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 1
@@ -494,7 +633,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60035
---- !u!114 &4703772935309755568
+--- !u!114 &4797328722485038858
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -504,14 +643,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sfxs/Inimigo/inimigo_take_damage
+  m_Name: event:/Sfxs/Inimigo/Inimigo hit
   m_EditorClassIdentifier: 
-  Path: event:/Sfxs/Inimigo/inimigo_take_damage
+  Path: event:/Sfxs/Inimigo/Inimigo hit
   Guid:
-    Data1: 1976910084
-    Data2: 1235808820
-    Data3: -721006662
-    Data4: -1556259097
+    Data1: 1104481076
+    Data2: 1169954565
+    Data3: -468451923
+    Data4: 164978874
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -520,7 +659,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 780
+  Length: 680
 --- !u!114 &4991153942311646655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -536,9 +675,90 @@ MonoBehaviour:
   Path: fmodBancos/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638577159790000000
+  lastModified: 638577890700000000
   FileSizes: []
   Exists: 1
+--- !u!114 &5079629174653245769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo Death
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo Death
+  Guid:
+    Data1: 1962329444
+    Data2: 1271656569
+    Data3: 1736991400
+    Data4: -1187769210
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &5295411355280732946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Nomuro/Dash
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Nomuro/Dash
+  Guid:
+    Data1: -873752792
+    Data2: 1146378554
+    Data3: -515996995
+    Data4: 2087961702
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 535
+--- !u!114 &5686449337540065159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo Walk loop
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo Walk loop
+  Guid:
+    Data1: 640577759
+    Data2: 1082377835
+    Data3: -1187205503
+    Data4: -1214187910
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5928
 --- !u!114 &7499661229317623761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -553,10 +773,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sfxs/Passando portal/Passando portal
   Guid:
-    Data1: -792840520
-    Data2: 1282232665
-    Data3: -1944343398
-    Data4: 659292570
+    Data1: 953970955
+    Data2: 1194481706
+    Data3: 928203658
+    Data4: 1320872141
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 0
@@ -566,6 +786,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &7750901158759845775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Inimigo/Inimigo attack
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Inimigo/Inimigo attack
+  Guid:
+    Data1: 1236697966
+    Data2: 1074464615
+    Data3: 251615139
+    Data4: -1338706031
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
 --- !u!114 &7831395958277519584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,10 +827,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Soundscape/Ambiencia floresta meio
   Guid:
-    Data1: 1507264360
-    Data2: 1244478831
-    Data3: -719354462
-    Data4: -1527289665
+    Data1: -1548839277
+    Data2: 1322837715
+    Data3: -1619936078
+    Data4: 1803067777
   Banks:
   - {fileID: 4991153942311646655}
   IsStream: 1
@@ -593,3 +840,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &8265472534471951750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Nomuro/Nomuro strong damage
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Nomuro/Nomuro strong damage
+  Guid:
+    Data1: 228933051
+    Data2: 1123867719
+    Data3: -1367501432
+    Data4: -1279712139
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3906
