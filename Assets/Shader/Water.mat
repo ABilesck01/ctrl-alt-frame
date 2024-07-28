@@ -60,8 +60,8 @@ Material:
     - _AnimColor: {r: 1, g: 1, b: 1, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamSpeed: {r: 0, g: 0.1, b: 0, a: 0}
-    - _MainColor: {r: 0, g: 0.10221359, b: 0.4056604, a: 0}
-    - _ShoreColor: {r: 0, g: 0.4830203, b: 1, a: 1}
+    - _MainColor: {r: 0.046057317, g: 0.08920312, b: 0.21698111, a: 0}
+    - _ShoreColor: {r: 0.17225882, g: 0.44865873, b: 0.745283, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2087176641583313137
 MonoBehaviour:
