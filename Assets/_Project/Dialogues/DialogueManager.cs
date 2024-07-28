@@ -4,17 +4,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Text nameText;
-    public Text dialogueText;
+    public TextMeshProUGUI dialogueText;
     private Queue<string> sentences;
 
-    public void StartDialogue( Dialogue dialogue)
+    public static DialogueManager instance;
+
+    private bool isWriting;
+    private string sentence;
+    private Coroutine writeCoroutine;
+
+    private void Awake()
+    {
+        instance = this;
+        sentences = new Queue<string>();
+    }
+
+    public void StartDialogue(Dialogue dialogue)
     {
 
-        nameText.text = dialogue.name;
+        //nameText.text = dialogue.name;
 
         sentences.Clear();
 
@@ -35,18 +50,58 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             return;
         }
-        string sentence = sentences.Dequeue();
-        dialogueText.text = sentence;   
+
+        if(!isWriting)
+        {
+            sentence = sentences.Dequeue();
+            writeCoroutine = StartCoroutine(WriteSentence(sentence));
+        }
+        else
+        {
+            if(writeCoroutine != null)
+            {
+                StopCoroutine(writeCoroutine);
+            }
+            dialogueText.text = sentence;
+            isWriting = false;
+        }
+    }
+
+    private IEnumerator WriteSentence(string sentence)
+    {
+        isWriting = true;
+        dialogueText.text = "";
+
+        foreach (char item in sentence.ToCharArray())
+        {
+            dialogueText.text += item;
+            yield return null;
+        }
+        isWriting = false;
     }
 
     private void EndDialogue()
     {
-        Debug.Log("End of conversation");
+        Debug.Log("End of conversation");   
+        SceneManager.LoadScene("Game");
     }
 
-    private void Start()
+    private void Update()
     {
-        sentences = new Queue<string>();
+        if (Keyboard.current.anyKey.wasPressedThisFrame)
+        {
+            DisplayNextSentence();
+        }
+        if (Gamepad.current != null)
+        {
+            foreach (var button in Gamepad.current.allControls)
+            {
+                if (button is ButtonControl buttonControl && buttonControl.wasPressedThisFrame)
+                {
+                    DisplayNextSentence();
+                    break;
+                }
+            }
+        }
     }
-
 }
