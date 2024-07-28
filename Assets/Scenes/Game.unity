@@ -1669,6 +1669,7 @@ GameObject:
   - component: {fileID: 109343625}
   - component: {fileID: 109343624}
   - component: {fileID: 109343623}
+  - component: {fileID: 109343626}
   m_Layer: 0
   m_Name: Water
   m_TagString: Untagged
@@ -1696,7 +1697,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d21a7c89f2e7d454cae48c2a0d4da881, type: 2}
+  - {fileID: 2100000, guid: 4d992075c93051849a012ec6e2d74c20, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1741,6 +1742,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1429228629}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &109343626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109343621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45581d46ff8714b4fbd192e2f2a708ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0.004, y: 1}
 --- !u!1 &112023654
 GameObject:
   m_ObjectHideFlags: 0
@@ -19043,7 +19057,7 @@ PrefabInstance:
       objectReference: {fileID: 572723031}
     - target: {fileID: 6670449688554426019, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
       propertyPath: movementSpeed
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8018511254305780306, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
       propertyPath: m_Name
