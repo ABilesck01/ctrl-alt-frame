@@ -15,6 +15,7 @@ public class PlayerPopUpsController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        Application.targetFrameRate = 60;
     }
 
     public void ShowPopUp(string text, Color forecolor, Color backgroundColor)

@@ -383,24 +383,6 @@ MonoBehaviour:
       estrelas corrompidas andam agora pelo planeta. Os ancestrais previram isso...e
       cabe aos Nomuro retornarem as estrelas para o c\xE9u, antes que o vazio destrua
       tudo...</b>"
-    - "No come\xE7o havia apenas o nada. E o nada em sua forma de vazio. E do caos
-      surgiu Tilax. Por milhares de ciclos Tilax existiu s\xF3 e na solid\xE3o Tilax
-      arrancando um peda\xE7o de si criou Tolume, o universo. Seu irm\xE3o.\r\nSeu
-      irm\xE3o criou as estrelas, Tilax, criadora do caos destruidora de estrelas,
-      criava tamb\xE9m os planetas e as criaturas do universo, aquelas que contemplariam
-      o trabalho de Tolume.\r"
-    - "Ao criar Tolume, tudo pareceu muito em ordem. Tilax pensou para si \u201CPor
-      que n\xE3o um pouco de caos?\u201D Desde ent\xE3o, Tilax espera sua metade
-      Tolume, adormecer, para que nesse breve instante ela possa descosturar as estrelas
-      de seu corpo, o grande tecido do universo. Os ancestrais Nomuro contam essa
-      lenda h\xE1 milhares de anos. Mas em seus escritos nunca revelaram por que
-      Tilax criou Polo.\r"
-    - "De todos os planetas que Tilax criou, Polo estava dentro de um de seus favoritos.
-      Na verdade, ao criar Polo, foi o \xFAnico momento em que os dois irm\xE3os
-      conseguiram concordar. Tolume fez a constela\xE7\xE3o, Tilax fez o planeta.\r\nOs
-      habitantes de Polo se chamariam Nomuro e eles seriam criados com um \xFAnico
-      prop\xF3sito: uma ponte que conectava os irm\xE3os. Enquanto Tolume costurava
-      a ordem, Tilax costurava o caos e em Polo as duas linhas se cruzariam.\r"
 --- !u!1 &1551912434
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +505,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 444938363}
+  nextScene: Game
 --- !u!1 &1741424423
 GameObject:
   m_ObjectHideFlags: 0

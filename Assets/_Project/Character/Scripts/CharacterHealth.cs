@@ -10,9 +10,9 @@ public class CharacterHealth : MonoBehaviour
 	[SerializeField] private float backwardsPushForce;
 	[SerializeField] private float upPushForce;
 	
-	[Header("Callbacks")]
-	public UnityEvent<CharacterHealth> OnCharacterDeath;
-	public UnityEvent OnCharacterReset;
+	//[Header("Callbacks")]
+	//public UnityEvent<CharacterHealth> OnCharacterDeath;
+	//public UnityEvent OnCharacterReset;
 
 	private Rigidbody rb;
 	protected int pushForceTotal;
@@ -65,7 +65,7 @@ public class CharacterHealth : MonoBehaviour
 	public virtual void Die()
 	{
 		isDead = true;
-		OnCharacterDeath?.Invoke(this);
+		//OnCharacterDeath?.Invoke(this);
 
     }
 
@@ -73,6 +73,6 @@ public class CharacterHealth : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		isDead = false;
-        OnCharacterReset?.Invoke();
+        //OnCharacterReset?.Invoke();
 	}
 }

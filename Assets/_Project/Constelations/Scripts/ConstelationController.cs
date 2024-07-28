@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ConstelationController : MonoBehaviour
 {
@@ -10,7 +12,6 @@ public class ConstelationController : MonoBehaviour
         public ConstelationType type;
         public int starCount;
         public bool hasConstelation;
-
         public void CheckForCompletion(List<Star> stars)
         {
             if(stars.Count != starCount)
@@ -23,53 +24,52 @@ public class ConstelationController : MonoBehaviour
 
             foreach(Star star in stars)
             {
-                Destroy(star.gameObject);
+                star.DestroySelf();
             }
 
             //play festival animations
         }
     }
 
-    public ConstelationData[] data;
+    public ConstelationData data;
 
     public static ConstelationController instance;
+
+    public UnityEvent<ConstelationController> OnFinishConstelation;
+
+    private void Start()
+    {
+        MiniGameController.instance.OnCorrectMinigame.AddListener(CheckForCompletion);
+    }
+
+    private void CheckForCompletion()
+    {
+
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if(collision.collider.CompareTag("Player"))
         {
-            List<Star> stars01 = new List<Star>();
-            List<Star> stars02 = new List<Star>();
-            List<Star> stars03 = new List<Star>();
-            List<Star> stars04 = new List<Star>();
+            List<Star> stars = new List<Star>();
 
             Star[] starsInScene = FindObjectsOfType<Star>();
             for(int i = 0; i < starsInScene.Length; i++)
             {
                 if (starsInScene[i].currentStarSate == StarState.FollowingPlayer)
                 {
-                    switch (starsInScene[i].constelation)
+                    if (starsInScene[i].constelation == data.type)
                     {
-                        case ConstelationType.constelation_01:
-                            stars01.Add(starsInScene[i]);
-                            break;
-                        case ConstelationType.constelation_02:
-                            stars02.Add(starsInScene[i]);
-                            break;
-                        case ConstelationType.constelation_03:
-                            stars03.Add(starsInScene[i]);
-                            break;
-                        case ConstelationType.constelation_04:
-                            stars04.Add(starsInScene[i]);
-                            break;
+                        stars.Add(starsInScene[i]);
                     }
                 }
             }
 
-            data[0].CheckForCompletion(stars01);
-            data[1].CheckForCompletion(stars02);
-            data[2].CheckForCompletion(stars03);
-            data[3].CheckForCompletion(stars04);
+            data.CheckForCompletion(stars);
+            if(data.hasConstelation)
+            {
+                OnFinishConstelation?.Invoke(this);
+            }
             
         }
     }

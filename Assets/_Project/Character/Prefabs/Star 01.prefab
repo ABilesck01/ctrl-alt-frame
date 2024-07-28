@@ -224,6 +224,7 @@ MonoBehaviour:
   minDistanceToPlayer: 2
   followSpeed: 3
   glowAnimation: starchild_glow
+  destroyAnimation: starchild_fadeout
   enemyAnimation: {fileID: 7354200555468072091}
   enemy: {fileID: 7584202202952584072, guid: 9bf0abeff302c5b468d475fb7ee5c918, type: 3}
   upAnimation: starchild_minigame_up

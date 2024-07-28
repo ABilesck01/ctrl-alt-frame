@@ -50,14 +50,14 @@ public class Enemy : Character
         randomPoint = startPoint;
         //MiniGameController.instance.OnCorrectMinigame
 
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = Player.player.transform;
         playerHealth = player.GetComponent<PlayerHealth>();
     }
 
     public void SpawnStar()
     {
         Instantiate(lockedStar, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        Destroy(gameObject, 0.1f);
     }
 
     protected override void Update()
@@ -90,20 +90,21 @@ public class Enemy : Character
         {
             case EnemyAIState.idle: //walk randomly
 
-                if(Vector3.Distance(randomPoint, transform.position) < 0.1f)
-                {
-                    //New random point
-                    float x = Random.Range(-distanceToRetreat / 2, distanceToRetreat / 2) + startPoint.x;
-                    float z = Random.Range(-distanceToRetreat / 2, distanceToRetreat / 2) + startPoint.z;
+                //if(Vector3.Distance(randomPoint, transform.position) < 0.1f)
+                //{
+                //    //New random point
+                //    float x = Random.Range(-distanceToRetreat / 2, distanceToRetreat / 2) + startPoint.x;
+                //    float z = Random.Range(-distanceToRetreat / 2, distanceToRetreat / 2) + startPoint.z;
 
-                    randomPoint = new Vector3(x, 0, z);
+                //    randomPoint = new Vector3(x, 0, z);
 
-                }
+                //}
 
-                direction = randomPoint - transform.position;
-                enemyMovement.HandleMovement(new Vector2(direction.x, direction.z), MovementSpeed);
-                enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
-                enemyAnimation.HandleMovementAnimation(1);
+                //direction = randomPoint - transform.position;
+                enemyMovement.HandleMovement(Vector2.zero, MovementSpeed);
+                //enemyMovement.handleRotation(new Vector2(direction.x, direction.z));
+
+                enemyAnimation.HandleMovementAnimation(0);
 
                 break;
             case EnemyAIState.chase: //chase player

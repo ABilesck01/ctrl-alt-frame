@@ -27,6 +27,8 @@ public class EnemyCombat : CharacterCombat
 
     private void State_Event(Spine.TrackEntry trackEntry, Spine.Event e)
     {
+        Debug.Log(e.Data.Name);
+
         if(e.Data.Name.Contains("hit"))
         {
             HandleAttack();

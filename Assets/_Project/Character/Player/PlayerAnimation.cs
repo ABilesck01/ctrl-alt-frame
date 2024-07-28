@@ -33,7 +33,7 @@ public class PlayerAnimation : CharacterAnimation
     {
         if (e.Data.Name.ToLower().Contains("footstep"))
         {
-            footstep.Play();
+            footstep?.Play();
         }
     }
 
@@ -56,7 +56,6 @@ public class PlayerAnimation : CharacterAnimation
 
     public override void PlayAnimation(string anim, bool loop = false)
     {
-        Debug.Log($"trying to play {anim} animation", this);
         if (skeletonAnimation.AnimationState.GetCurrent(0).Animation.Name.Equals(anim))
             return;
 

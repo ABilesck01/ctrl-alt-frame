@@ -12,6 +12,7 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    public string nextScene;
     private Queue<string> sentences;
 
     public static DialogueManager instance;
@@ -83,7 +84,7 @@ public class DialogueManager : MonoBehaviour
     private void EndDialogue()
     {
         Debug.Log("End of conversation");   
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene(nextScene);
     }
 
     private void Update()

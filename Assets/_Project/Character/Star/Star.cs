@@ -17,6 +17,7 @@ public class Star : Character
     [SerializeField] private float followSpeed = 3f;
     [Header("Animation")]
     [SerializeField] private string glowAnimation;
+    [SerializeField] private string destroyAnimation;
     [Header("Minigame")]
     [SerializeField] private DOTweenAnimation enemyAnimation;
     [SerializeField] private Enemy enemy;
@@ -38,17 +39,24 @@ public class Star : Character
     protected override void Awake()
     {
         base.Awake();
-        starMovement = GetComponent<StarMovement>();
-        starAnimation = GetComponent<StarAnimation>();
-        rb = GetComponent<Rigidbody>();
-        currentStarSate = StarState.running;
+        
+    }
+
+    public void DestroySelf()
+    {
+        starAnimation.PlayAnimation(destroyAnimation);
+        Destroy(this.gameObject, 1);
     }
 
     private void Start()
     {
+        starMovement = GetComponent<StarMovement>();
+        starAnimation = GetComponent<StarAnimation>();
+        rb = GetComponent<Rigidbody>();
+        currentStarSate = StarState.running;
         startPoint = transform.position;
         randomPoint = startPoint;
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = Player.player.transform;
     }
 
     protected override void Update()

@@ -45,7 +45,6 @@ public class EnemyAnimation : CharacterAnimation
 
     public override void PlayAnimation(string anim, bool loop = false)
     {
-        Debug.Log($"trying to play {anim} animation", this);
         if (skeletonAnimation.AnimationState.GetCurrent(0).Animation.Name.Equals(anim))
             return;
 

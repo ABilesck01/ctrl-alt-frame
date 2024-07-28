@@ -34,8 +34,8 @@ public class PlayerCamera : MonoBehaviour
 
     private void Awake()
     {
-        startPosition = cameraTransform.position;
-        startRotation = cameraTransform.rotation;
+        startPosition = cameraTransform.localPosition;
+        startRotation = cameraTransform.localRotation;
         instance = this;
         cam = cameraTransform.GetComponent<Camera>();
         normalFOV = cam.fieldOfView;
@@ -65,108 +65,10 @@ public class PlayerCamera : MonoBehaviour
     {
         if (isShakingCamera)
             return;
-        MinigameCamera();
-        SkyCamera();
-    }
 
-    private void MinigameCamera()
-    {
-        if (isOnMinigame)
+        if(isOnMinigame)
         {
-            if (cam.fieldOfView > focusFOV)
-            {
-                float fov = Mathf.Lerp(cam.fieldOfView, focusFOV, focusTime * Time.deltaTime);
-                cam.fieldOfView = fov;
-                if (cam.fieldOfView - fov < 0.1f)
-                    cam.fieldOfView = fov;
-            }
-
-            if (Vector3.Distance(cameraTransform.localPosition, focusCameraPosition) > 0.1f)
-            {
-                Vector3 smoothedPostion = Vector3.Lerp(cameraTransform.localPosition, focusCameraPosition, focusTime * Time.deltaTime);
-                cameraTransform.localPosition = smoothedPostion;
-
-            }
-            else
-            {
-                cameraTransform.localPosition = focusCameraPosition;
-            }
-            return;
-        }
-
-        if (cam.fieldOfView < normalFOV)
-        {
-            float fov = Mathf.Lerp(cam.fieldOfView, normalFOV, focusTime * Time.deltaTime);
-            cam.fieldOfView = fov;
-            if (cam.fieldOfView - fov < 0.1f)
-                cam.fieldOfView = fov;
-        }
-
-        if (Vector3.Distance(cameraTransform.localPosition, startPosition) > 0.1f)
-        {
-            //Vector3 moveDir = (cameraTransform.localPosition - startPosition).normalized
-            Vector3 smoothedPostion = Vector3.Lerp(cameraTransform.localPosition, focusCameraPosition, focusTime * Time.deltaTime);
-            cameraTransform.localPosition = smoothedPostion;
-
-        }
-        else
-        {
-            cameraTransform.localPosition = startPosition;
-        }
-
-        if (Quaternion.Dot(cameraTransform.localRotation, startRotation) > 0.1f)
-        {
-            Quaternion smoothRotation = Quaternion.Lerp(cameraTransform.localRotation, startRotation, focusTime * Time.deltaTime);
-            cameraTransform.localRotation = smoothRotation;
-        }
-        else
-        {
-            cameraTransform.localRotation = startRotation;
-        }
-    }
-
-    private void SkyCamera()
-    {
-        if (isLookingAtSky)
-        {
-            if (Vector3.Distance(cameraTransform.localPosition, skyCameraPosition) > 0.1f)
-            {
-                Vector3 smoothedPostion = Vector3.Lerp(cameraTransform.localPosition, skyCameraPosition, skyCameraMoveSpeed * Time.deltaTime);
-                cameraTransform.localPosition = smoothedPostion;
-
-            }
-            else
-            {
-                cameraTransform.localPosition = skyCameraPosition;
-            }
-
-            if (Quaternion.Dot(cameraTransform.localRotation, Quaternion.Euler(skyCameraAngle)) > 0.1f)
-            {
-                Quaternion smoothRotation = Quaternion.Lerp(cameraTransform.localRotation, Quaternion.Euler(skyCameraAngle), skyCameraRotationSpeed * Time.deltaTime);
-                cameraTransform.localRotation = smoothRotation;
-            }
-            else
-            {
-                cameraTransform.localRotation = Quaternion.Euler(skyCameraAngle);
-            }
-            return;
-        }
-
-        if (Vector3.Distance(cameraTransform.localPosition, startPosition) > 0.1f)
-        {
-            Vector3 smoothedPostion = Vector3.Lerp(cameraTransform.localPosition, startPosition, skyCameraMoveSpeed * Time.deltaTime);
-            cameraTransform.localPosition = smoothedPostion;
-
-        }
-        else
-        {
-            cameraTransform.localPosition = startPosition;
-        }
-
-        if (Quaternion.Dot(cameraTransform.localRotation, startRotation) > 0.1f)
-        {
-            Quaternion smoothRotation = Quaternion.Lerp(cameraTransform.localRotation, startRotation, skyCameraRotationSpeed * Time.deltaTime);
-            cameraTransform.localRotation = smoothRotation;
+            cameraTransform.LookAt(pivot.position);
         }
         else
         {
@@ -178,9 +80,9 @@ public class PlayerCamera : MonoBehaviour
     {
         if (isOnMinigame || isLookingAtSky)
         {
-
             return;
         }
+
         Vector3 targetCameraPosition = Vector3.SmoothDamp(transform.position, target.position, ref cameraVelocity, cameraSmoothSpeed);
         transform.position = targetCameraPosition;
     }

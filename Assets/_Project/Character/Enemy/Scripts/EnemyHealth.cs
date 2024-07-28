@@ -57,6 +57,7 @@ public class EnemyHealth : CharacterHealth
 
     public override void Die()
     {
+        enemy.UnlockStar();
         enemy.enemyAudio.PlayDeathSound();
         base.Die();
         characterAnimation.PlayAnimation(death_anim);

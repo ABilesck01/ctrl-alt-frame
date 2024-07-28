@@ -10,13 +10,16 @@ public class Player : Character
     [SerializeField] private bool action_01;
     [SerializeField] private bool playerdash;
     [SerializeField] private bool lookUp;
-
+    [Header("Flags")]
+    public bool isAttacking;
     [Header("Components")]
     [SerializeField] public PlayerMovement playerMovement;
     [SerializeField] public PlayerAnimation playerAnimation;
     [SerializeField] public PlayerCombat playerCombat;
     [SerializeField] public PlayerCamera playerCamera;
     
+
+    public static Player player;
 
     public void OnInputMovement(InputAction.CallbackContext context)
     {
@@ -53,9 +56,18 @@ public class Player : Character
         }
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        player = this;
+    }
+
     protected override void Update()
     {
         if (MiniGameController.instance.hasMinigame)
+            return;
+
+        if (isAttacking)
             return;
 
         playerMovement.handleRotation(inputMovement);
