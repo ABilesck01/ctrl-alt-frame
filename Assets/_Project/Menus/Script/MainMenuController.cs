@@ -12,14 +12,9 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene(gameScene);
+        //SceneManager.LoadScene(gameScene);
         //playButtonEffect.Play();
-    }
-
-    public void StartScene()
-    {
-        SceneManager.LoadScene(gameScene);
-
+        LoadingController.instance.LoadScene(3);
     }
 
     public void quitGame()

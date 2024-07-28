@@ -565,6 +565,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 385bfd66-3160-4984-8368-43a59c5e2d1b
     m_ActionName: Player/Dash[/Keyboard/k,/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6670449688554426019}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SkyInput
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9f3cadd9-f484-49dd-8d1f-20c9664ba0d2
+    m_ActionName: Player/Sky[/XInputControllerWindows/rightStick/up,/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -660,9 +676,11 @@ MonoBehaviour:
   inputMovement: {x: 0, y: 0}
   action_01: 0
   playerdash: 0
+  lookUp: 0
   playerMovement: {fileID: 5561349060912693503}
   playerAnimation: {fileID: 2516747684949952903}
   playerCombat: {fileID: 4916045373611199992}
+  playerCamera: {fileID: 0}
 --- !u!114 &5561349060912693503
 MonoBehaviour:
   m_ObjectHideFlags: 0

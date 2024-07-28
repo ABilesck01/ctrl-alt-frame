@@ -7,7 +7,8 @@ using Random = UnityEngine.Random;
 
 public class Star : Character
 {
-    [SerializeField] private StarState currentStarSate;
+    [SerializeField] public StarState currentStarSate;
+    [SerializeField] public ConstelationType  constelation;
     [Header("Running")]
     [SerializeField] private float runningDistance = 15;
     [SerializeField] private float runningSpeed = 3.1f;

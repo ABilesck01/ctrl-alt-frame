@@ -19,7 +19,7 @@ GameObject:
   - component: {fileID: 5644422362860684428}
   - component: {fileID: 7354200555468072091}
   m_Layer: 6
-  m_Name: Star
+  m_Name: Star 04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +121,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d8be3c4a-67ee-4de4-bd31-7074294c2fa4
     m_ActionName: Player/right[/Keyboard/rightArrow,/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f3cadd9-f484-49dd-8d1f-20c9664ba0d2
+    m_ActionName: Player/Sky[/Keyboard/l]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -214,13 +218,14 @@ MonoBehaviour:
   spriteRenderer: {fileID: 7260686556065607734}
   characterLight: {fileID: 1268870193423191973}
   currentStarSate: 0
+  constelation: 3
   runningDistance: 15
   runningSpeed: 3.1
   minDistanceToPlayer: 2
   followSpeed: 3
   glowAnimation: starchild_glow
   enemyAnimation: {fileID: 7354200555468072091}
-  enemy: {fileID: 7584202202952584072, guid: 9bf0abeff302c5b468d475fb7ee5c918, type: 3}
+  enemy: {fileID: 7584202202952584072, guid: 96a1775f2007e1a489d417554a18e13d, type: 3}
   upAnimation: starchild_minigame_up
   downAnimation: starchild_minigame_down
   leftAnimation: starchild_minigame_left
