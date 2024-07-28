@@ -105,7 +105,7 @@ public class PlayerMinigame : MonoBehaviour
             case Sequence.down:
                 sign = sequenceDown;
                 break;
-            case Sequence.left:
+            case Sequence.left: 
                 sign = sequenceLeft;
                 break;
             case Sequence.right:
