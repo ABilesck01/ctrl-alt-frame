@@ -412,12 +412,13 @@ MonoBehaviour:
   - {fileID: -4721842162411994206}
   - {fileID: -3396660923733285590}
   - {fileID: -3804181891394855643}
+  - {fileID: 7499661229317623761}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4991153942311646655}
   StringsBanks:
   - {fileID: 1769467196793397192}
-  cacheTime: 638577089040000000
+  cacheTime: 638577159790000000
   cacheVersion: 131619
 --- !u!114 &1566099698135482366
 MonoBehaviour:
@@ -461,10 +462,10 @@ MonoBehaviour:
   Path: fmodBancos/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638577088990000000
+  lastModified: 638577159750000000
   FileSizes:
   - Name: 
-    Value: 1732
+    Value: 1794
   Exists: 1
 --- !u!114 &3107984031317978095
 MonoBehaviour:
@@ -535,9 +536,36 @@ MonoBehaviour:
   Path: fmodBancos/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638577089040000000
+  lastModified: 638577159790000000
   FileSizes: []
   Exists: 1
+--- !u!114 &7499661229317623761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sfxs/Passando portal/Passando portal
+  m_EditorClassIdentifier: 
+  Path: event:/Sfxs/Passando portal/Passando portal
+  Guid:
+    Data1: -792840520
+    Data2: 1282232665
+    Data3: -1944343398
+    Data4: 659292570
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
 --- !u!114 &7831395958277519584
 MonoBehaviour:
   m_ObjectHideFlags: 0
