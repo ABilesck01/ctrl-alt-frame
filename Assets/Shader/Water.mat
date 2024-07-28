@@ -45,7 +45,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AnimCutOut: 2.07
+    - _AnimCutOut: 0.79
     - _FoamAmount: 0.8
     - _FoamCutout: 0.64
     - _FoamFallOff: 2.1
@@ -57,7 +57,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _AnimColor: {r: 1, g: 1, b: 1, a: 0}
+    - _AnimColor: {r: 0, g: 0.03959332, b: 0.2264151, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamSpeed: {r: 0, g: 0.1, b: 0, a: 0}
     - _MainColor: {r: 0, g: 0.07964024, b: 0.31132078, a: 0}
