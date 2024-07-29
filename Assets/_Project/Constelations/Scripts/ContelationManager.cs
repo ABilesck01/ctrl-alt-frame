@@ -21,6 +21,9 @@ public class ContelationManager : MonoBehaviour
 
     private void CheckForEndGame(ConstelationController arg0)
     {
+        if (!arg0.data.hasConstelation) 
+            return;
+
         completeCount++;
 
         if(completeCount >= 3)

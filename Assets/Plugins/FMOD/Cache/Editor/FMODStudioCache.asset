@@ -132,7 +132,35 @@ MonoBehaviour:
   - {fileID: -7702305906959961934}
   MinDistance: 1
   MaxDistance: 20
-  Length: 124000
+  Length: 74000
+--- !u!114 &-5495103722089042997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musics/Mus_theme
+  m_EditorClassIdentifier: 
+  Path: event:/Musics/Mus_theme
+  Guid:
+    Data1: 1600789449
+    Data2: 1329997833
+    Data3: 1523645333
+    Data4: -398700711
+  Banks:
+  - {fileID: 4991153942311646655}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8320919537372835787}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48000
 --- !u!114 &-5069665632302271221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,12 +526,13 @@ MonoBehaviour:
   - {fileID: 268137239133249251}
   - {fileID: 5686449337540065159}
   - {fileID: -373015430070748395}
+  - {fileID: -5495103722089042997}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4991153942311646655}
   StringsBanks:
   - {fileID: 1769467196793397192}
-  cacheTime: 638577952437961333
+  cacheTime: 638578008760000000
   cacheVersion: 131619
 --- !u!114 &268137239133249251
 MonoBehaviour:
@@ -601,10 +630,10 @@ MonoBehaviour:
   Path: fmodBancos/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638577952437961333
+  lastModified: 638578008550000000
   FileSizes:
   - Name: 
-    Value: 2430
+    Value: 2478
   Exists: 1
 --- !u!114 &3107984031317978095
 MonoBehaviour:
@@ -675,7 +704,7 @@ MonoBehaviour:
   Path: fmodBancos/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638577952437951411
+  lastModified: 638578008760000000
   FileSizes: []
   Exists: 1
 --- !u!114 &5079629174653245769
@@ -867,3 +896,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 3906
+--- !u!114 &8320919537372835787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Mus_theme/Tension
+  m_EditorClassIdentifier: 
+  Name: Tension
+  StudioPath: 
+  Min: 0
+  Max: 4
+  Default: 0
+  ID:
+    data1: 1512028382
+    data2: 2936271814
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1

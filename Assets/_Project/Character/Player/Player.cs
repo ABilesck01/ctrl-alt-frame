@@ -62,10 +62,6 @@ public class Player : Character
         player = this;
     }
 
-    private void Start()
-    {
-        SongController.instance.SetSongParameter(1);
-    }
 
     protected override void Update()
     {

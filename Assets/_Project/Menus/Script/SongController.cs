@@ -12,10 +12,20 @@ public class SongController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    public void SetSongParameter(int  parameter)
+    private void Start()
     {
-        eventInstance.setParameterByName("ParameterName", parameter);
+        eventInstance = FMODUnity.RuntimeManager.CreateInstance(fmodEvent);
+        eventInstance.start();
+    }
+
+    public void SetSongParameter(int parameter)
+    {
+        Debug.Log($"Tension - {parameter}");
+        eventInstance.setParameterByName("Tension", parameter);
+        eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        eventInstance.start();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -13,6 +14,17 @@ public class SettingsController : MonoBehaviour
     [Header("Tabs")]
     public GameObject[] tabs;
     Resolution[] resolutions;
+
+    FMOD.Studio.Bus music;
+    FMOD.Studio.Bus sfx;
+    FMOD.Studio.Bus ambience;
+
+    private void Awake()
+    {
+        music = FMODUnity.RuntimeManager.GetBus("bus:/Musics");
+        sfx = FMODUnity.RuntimeManager.GetBus("bus:/Sfxs");
+        ambience = FMODUnity.RuntimeManager.GetBus("bus:/Soundscape");
+    }
 
     void Start()
     {
@@ -41,17 +53,25 @@ public class SettingsController : MonoBehaviour
     }
     public void SetVolumeMaster (float volumemaster)
     {
-        audioMixer.SetFloat("volume Master", volumemaster);
+        //audioMixer.SetFloat("volume Master", volumemaster);
+    }
+
+    public void SetVolumeAmbience(float volumemaster)
+    {
+        //audioMixer.SetFloat("volume Master", volumemaster);
+        ambience.setVolume(volumemaster);
     }
 
     public void SetVolumeSFX(float volumesfx)
     {
-        audioMixer.SetFloat("volume SFX",volumesfx);
+        //audioMixer.SetFloat("volume SFX",volumesfx);
+        sfx.setVolume(volumesfx);
     }
 
     public void SetVolumeMusic(float volumemusic)
     {
-        audioMixer.SetFloat("volume Music",volumemusic);
+        //audioMixer.SetFloat("volume Music",volumemusic);
+        music.setVolume(volumemusic);
     }
 
     public void SetQuality(int quality)
@@ -68,6 +88,11 @@ public class SettingsController : MonoBehaviour
     {
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void Back()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void changeTabs (int index)

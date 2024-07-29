@@ -66,24 +66,24 @@ public class PlayerCombat : CharacterCombat
         }
     }
 
-    private void Update()
-    {
-        var attackers = Array.Find(enemies, e => e.currentAIState == EnemyAIState.chase || e.currentAIState == EnemyAIState.attack);
-        if(attackers != null)
-        {
-            if(!hasCombat)
-            {
-                SongController.instance.SetSongParameter(4);
-                hasCombat = true;
-            }
-        }
-        else
-        {
-            if (hasCombat)
-            {
-                SongController.instance.SetSongParameter(2);
-                hasCombat = false;
-            }
-        }
-    }
+    //private void Update()
+    //{
+    //    var attackers = Array.Find(enemies, e => e.currentAIState == EnemyAIState.chase || e.currentAIState == EnemyAIState.attack);
+    //    if(attackers != null)
+    //    {
+    //        if(!hasCombat)
+    //        {
+    //            SongController.instance.SetSongParameter(4);
+    //            hasCombat = true;
+    //        }
+    //    }
+    //    else
+    //    {
+    //        if (hasCombat)
+    //        {
+    //            SongController.instance.SetSongParameter(2);
+    //            hasCombat = false;
+    //        }
+    //    }
+    //}
 }

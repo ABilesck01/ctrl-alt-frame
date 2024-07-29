@@ -14,9 +14,17 @@ public class ConstelationController : MonoBehaviour
         public bool hasConstelation;
         public void CheckForCompletion(List<Star> stars)
         {
+            if(hasConstelation)
+            {
+                PlayerHealthBar.instance.ShowText("Você já completou esta constelação!");
+                return;
+            }
+
             if(stars.Count != starCount)
             {
                 Debug.Log("Nao tem todas as estrelas =(");
+                PlayerHealthBar.instance.ShowText("Você não possui todas as estrelas para completar esta constelação!");
+                hasConstelation = false;
                 return;
             }
 
