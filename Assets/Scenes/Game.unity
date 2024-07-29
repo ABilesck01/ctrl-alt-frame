@@ -8652,7 +8652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 557849991}
   m_Layer: 0
-  m_Name: Environment (1)
+  m_Name: Environment new
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18211,7 +18211,7 @@ PrefabInstance:
       objectReference: {fileID: 572723031}
     - target: {fileID: 6670449688554426019, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
       propertyPath: movementSpeed
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6670449688554426019, guid: b243ffe03eebf094cb9995def3fc42c9, type: 3}
       propertyPath: characterColor.b
