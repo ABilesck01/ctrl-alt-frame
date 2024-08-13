@@ -7,7 +7,8 @@ public class PlayerMovement : CharacterMovement
 {
     [SerializeField] private Transform gfx;
     [Header("Audio")]
-    [SerializeField]FMODUnity.StudioEventEmitter dashSound;
+    [SerializeField]FMODUnity.StudioEventEmitter dashSound; 
+    [SerializeField]FMODUnity.StudioEventEmitter attackSound;
     
     public bool canMove = true;
 
@@ -57,6 +58,7 @@ public class PlayerMovement : CharacterMovement
         PlayerCamera.instance.ShakeCamera(.1f, .08f);
 
         dashSound.Play();
+        attackSound.Play();
 
         if (direction == Vector2.zero)
             direction = new Vector2(facingRight ? 1 : 0, 0);
